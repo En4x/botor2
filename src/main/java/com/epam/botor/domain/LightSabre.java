@@ -35,6 +35,7 @@ public class LightSabre extends Weapon implements EnergyWeapon, InitializingBean
 		System.out.printf("%s destroy2()\n", getName());		
 	}
 
+	
 	public void init() throws Exception {
 		System.out.printf("%s init()\n", getName());		
 	}

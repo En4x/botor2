@@ -32,6 +32,11 @@ public class Jedi extends Person implements ForceUser {
 		return new LightSabre("Ugly light sabre of " + getName(), damage);
 	}
 	
+	
+	public void defaultInit() {
+		System.out.println("Hello Jedi " + getName());
+	}
+	
 	@Override
 	public String toString() {
 		return "Jedi [lightSabre=" + lightSabre + ", padavan=" + padavan + ", toString()=" + super.toString() + "]";
