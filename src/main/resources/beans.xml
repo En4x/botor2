@@ -21,10 +21,14 @@
 
 	
 	<bean class="com.epam.botor.domain.Jedi" id="joda">
+		<constructor-arg value="Joda"/>
+		<constructor-arg value="MALE"/>
 		<constructor-arg ref="lightSabre"/>
 	</bean>
 
 	<bean class="com.epam.botor.domain.Jedi" id="obiVanKenobi">
+		<constructor-arg value="Obi Van Kenobi"/>
+		<constructor-arg value="MALE"/>
 		<constructor-arg ref="lightSabre"/>
 	</bean>
 
