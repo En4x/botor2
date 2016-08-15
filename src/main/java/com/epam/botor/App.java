@@ -1,13 +1,17 @@
 package com.epam.botor;
 
+import com.epam.botor.domain.Jedi;
+
 /**
- * Hello world!
+ * Jedi Application
  *
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-    }
+public class App {
+	public static void main(String[] args) {
+
+		Jedi jedi = new Jedi();
+
+		System.out.println(jedi.fight());
+
+	}
 }

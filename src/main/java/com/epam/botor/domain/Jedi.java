@@ -1,10 +1,15 @@
 package com.epam.botor.domain;
 
-public class Jedi implements ForceUser {
+public class Jedi {
 
-    @Override
-    public ForceSide getAlliance() {
-        return ForceSide.LIGHT;
-    }
+	private final LightSabre lightSabre;
 
+	public Jedi() {
+		lightSabre = new LightSabre("LightSabre", 100);
+	}
+	
+	public String fight() {
+		return lightSabre.hit();
+	}
+	
 }

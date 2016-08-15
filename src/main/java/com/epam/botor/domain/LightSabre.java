@@ -1,10 +1,27 @@
 package com.epam.botor.domain;
 
-public class LightSabre extends Weapon implements EnergyWeapon {
+public class LightSabre {
+	private final String name;
+	private final int damage;
+	
+	public LightSabre(String name, int damage) {
+		super();
+		this.name = name;
+		this.damage = damage;
+	}
+	
+	public String hit() {
+		return "tyútyútyútyú";
+	}
 
-    public LightSabre(final String name, final int damage) {
-        super(name, damage);
-        // TODO Auto-generated constructor stub
-    }
+	public String getName() {
+		return name;
+	}
+
+	public int getDamage() {
+		return damage;
+	}
+	
+	
 
 }
