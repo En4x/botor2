@@ -45,7 +45,9 @@
 	</bean>
 
 	
-	
+	<bean class="com.epam.botor.domain.LightSabre" factory-bean="obiVanKenobi"  factory-method="createUglyLightSabre" id="uglyLightSabre">
+		<constructor-arg value="1000"/>
+	</bean>
 	
 </beans>
 

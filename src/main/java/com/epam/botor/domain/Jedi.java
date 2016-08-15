@@ -28,6 +28,10 @@ public class Jedi extends Person implements ForceUser {
 		return jedi;
 	}
 
+	public LightSabre createUglyLightSabre(int damage) {
+		return new LightSabre("Ugly light sabre of " + getName(), damage);
+	}
+	
 	@Override
 	public String toString() {
 		return "Jedi [lightSabre=" + lightSabre + ", padavan=" + padavan + ", toString()=" + super.toString() + "]";

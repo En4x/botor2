@@ -42,6 +42,8 @@ public class App {
 			
 			System.out.println(context.getBean("sidius", Jedi.class));
 			
+			System.out.println(context.getBean("uglyLightSabre"));
+			
 		}
 		
 
