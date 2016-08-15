@@ -6,6 +6,7 @@
 
 	<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
 
+	<bean class="com.epam.botor.beanpostprocessors.SayRiseBeanPostProcessor"/>
 
 	<bean class="com.epam.botor.domain.LightSabre" id="lightSabre" 
 			init-method="init" destroy-method="destroy2">
