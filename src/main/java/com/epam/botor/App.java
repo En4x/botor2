@@ -39,6 +39,9 @@ public class App {
 			blue = context.getBean("blueSabre", LightSabre.class);
 			System.out.println(blue + ": " + blue.getIdentityHashCode());
 
+			
+			System.out.println(context.getBean("sidius", Jedi.class));
+			
 		}
 		
 

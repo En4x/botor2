@@ -32,7 +32,20 @@
 		<constructor-arg ref="lightSabre"/>
 	</bean>
 
+	<bean class="com.epam.botor.domain.Jedi" id="darthVader">
+		<constructor-arg value="Darth Vader"/>
+		<constructor-arg value="MALE"/>
+		<constructor-arg ref="lightSabre"/>
+	</bean>
+
+	
+	<bean class="com.epam.botor.domain.Jedi" factory-method="createJediMaster" id="sidius">
+		<constructor-arg value="Sidius"/>
+		<constructor-arg ref="darthVader"/>
+	</bean>
+
 	
 	
 	
 </beans>
+

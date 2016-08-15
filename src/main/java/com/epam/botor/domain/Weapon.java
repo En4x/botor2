@@ -19,4 +19,10 @@ public abstract class Weapon {
         return damage;
     }
 
+	@Override
+	public String toString() {
+		return "Weapon [name=" + name + ", damage=" + damage + "]";
+	}
+
+    
 }

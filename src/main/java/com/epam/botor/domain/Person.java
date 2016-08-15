@@ -19,4 +19,11 @@ public abstract class Person {
         return gender;
     }
 
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", gender=" + gender + "]";
+	}
+    
+    
+
 }
