@@ -4,8 +4,8 @@ public class Jedi {
 
 	private final LightSabre lightSabre;
 
-	public Jedi() {
-		lightSabre = new LightSabre("LightSabre", 100);
+	public Jedi(LightSabre lightSabre) {
+		this.lightSabre = lightSabre;
 	}
 	
 	public String fight() {
