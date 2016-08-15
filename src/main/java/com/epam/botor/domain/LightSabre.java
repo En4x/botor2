@@ -3,11 +3,16 @@ package com.epam.botor.domain;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
 public class LightSabre extends Weapon implements EnergyWeapon, InitializingBean, DisposableBean {
 
+	private static final Logger LOGGER = LoggerFactory.getLogger(Jedi.class);
+	
+	
     public LightSabre(final String name, final int damage) {
         super(name, damage);
     }
@@ -27,34 +32,34 @@ public class LightSabre extends Weapon implements EnergyWeapon, InitializingBean
 
 	@Override
 	public void destroy() throws Exception {
-		System.out.printf("%s destroy()\n", getName());
+		LOGGER.debug("{} destroy()", getName());
 		
 	}
 
 	public void destroy2() throws Exception {
-		System.out.printf("%s destroy2()\n", getName());		
+		LOGGER.debug("{} destroy2()", getName());		
 	}
 
 	
 	public void init() throws Exception {
-		System.out.printf("%s init()\n", getName());		
+		LOGGER.debug("{} init()", getName());		
 	}
 
 	@PreDestroy
 	public void preDestroy() throws Exception {
-		System.out.printf("%s preDestroy()\n", getName());		
+		LOGGER.debug("{} preDestroy()", getName());		
 	}
 
 	@PostConstruct
 	public void postConstruct() throws Exception {
-		System.out.printf("%s postConstruct()\n", getName());		
+		LOGGER.debug("{} postConstruct()", getName());		
 	}
 
 	
 	
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		System.out.printf("%s afterPropertiesSet()\n", getName());		
+		LOGGER.debug("{} afterPropertiesSet()", getName());		
 	}
 	
 	

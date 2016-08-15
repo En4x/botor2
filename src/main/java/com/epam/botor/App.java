@@ -1,5 +1,7 @@
 package com.epam.botor;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -11,38 +13,40 @@ import com.epam.botor.domain.LightSabre;
  *
  */
 public class App {
+	private static final Logger LOGGER = LoggerFactory.getLogger(App.class);
+	
 	public static void main(String[] args) {
-
+		
 		try (ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("beans.xml")) {
 			Jedi jedi = context.getBean("joda", Jedi.class);
 			
 			
-			System.out.println(jedi.fight());
+			LOGGER.debug(jedi.fight());
 			
 			LightSabre red;  
 			red = context.getBean("redSabre", LightSabre.class);
-			System.out.println(red + ": " + red.getIdentityHashCode());
+			LOGGER.debug(red + ": " + red.getIdentityHashCode());
 
 			red = context.getBean("redSabre", LightSabre.class);
-			System.out.println(red + ": " + red.getIdentityHashCode());
+			LOGGER.debug(red + ": " + red.getIdentityHashCode());
 
 			red = context.getBean("redSabre", LightSabre.class);
-			System.out.println(red + ": " + red.getIdentityHashCode());
+			LOGGER.debug(red + ": " + red.getIdentityHashCode());
 
 			LightSabre blue;  
 			blue = context.getBean("blueSabre", LightSabre.class);
-			System.out.println(blue + ": " + blue.getIdentityHashCode());
+			LOGGER.debug(blue + ": " + blue.getIdentityHashCode());
 
 			blue = context.getBean("blueSabre", LightSabre.class);
-			System.out.println(blue + ": " + blue.getIdentityHashCode());
+			LOGGER.debug(blue + ": " + blue.getIdentityHashCode());
 
 			blue = context.getBean("blueSabre", LightSabre.class);
-			System.out.println(blue + ": " + blue.getIdentityHashCode());
+			LOGGER.debug(blue + ": " + blue.getIdentityHashCode());
 
 			
-			System.out.println(context.getBean("sidius", Jedi.class));
+			LOGGER.debug("" + context.getBean("sidius", Jedi.class));
 			
-			System.out.println(context.getBean("uglyLightSabre"));
+			LOGGER.debug("" + context.getBean("uglyLightSabre"));
 			
 		}
 		

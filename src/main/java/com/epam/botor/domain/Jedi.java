@@ -2,8 +2,14 @@ package com.epam.botor.domain;
 
 import static com.epam.botor.domain.Gender.MALE;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Jedi extends Person implements ForceUser {
 
+	private static final Logger LOGGER = LoggerFactory.getLogger(Jedi.class);
+	
+	
 	private final LightSabre lightSabre;
 	
 	private Jedi padavan; 
@@ -34,7 +40,7 @@ public class Jedi extends Person implements ForceUser {
 	
 	
 	public void defaultInit() {
-		System.out.println("Hello Jedi " + getName());
+		LOGGER.debug("Hello Jedi " + getName());
 	}
 	
 	@Override

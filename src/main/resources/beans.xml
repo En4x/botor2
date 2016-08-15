@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" default-init-method="defaultInit" default-destroy-method="defaultDestroy">
+	default-init-method="defaultInit"
+	default-destroy-method="defaultDestroy"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
 
-	<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
 
+	<context:annotation-config/>
 	<bean class="com.epam.botor.beanpostprocessors.SayRiseBeanPostProcessor"/>
+
+
 
 	<bean class="com.epam.botor.domain.LightSabre" id="lightSabre" 
 			init-method="init" destroy-method="destroy2">
