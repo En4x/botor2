@@ -8,9 +8,28 @@
 		<constructor-arg value="LightSabre" />
 		<constructor-arg value="100" />
 	</bean>
+
+	<bean class="com.epam.botor.domain.LightSabre" id="redSabre">
+		<constructor-arg value="red sabre" />
+		<constructor-arg value="1000" />
+	</bean>
+
+	<bean class="com.epam.botor.domain.LightSabre" id="blueSabre" scope="prototype">
+		<constructor-arg value="blue sabre" />
+		<constructor-arg value="1000" />
+	</bean>
+
+
 	
 	<bean class="com.epam.botor.domain.Jedi" id="joda">
 		<constructor-arg ref="lightSabre"/>
-	
 	</bean>
+
+	<bean class="com.epam.botor.domain.Jedi" id="obiVanKenobi">
+		<constructor-arg ref="redSabre"/>
+	</bean>
+
+	
+	
+	
 </beans>

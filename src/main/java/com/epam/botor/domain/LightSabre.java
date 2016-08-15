@@ -22,6 +22,14 @@ public class LightSabre {
 		return damage;
 	}
 	
-	
+	public String getIdentityHashCode() {
+		return "" + System.identityHashCode(this);
+	}
 
+	@Override
+	public String toString() {
+		return "LightSabre [name=" + name + ", damage=" + damage + "]";
+	}
+	
+	
 }
