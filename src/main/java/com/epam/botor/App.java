@@ -1,7 +1,10 @@
 package com.epam.botor;
 
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
+
 import com.epam.botor.domain.Jedi;
-import com.epam.botor.domain.LightSabre;
 
 /**
  * Jedi Application
@@ -10,9 +13,10 @@ import com.epam.botor.domain.LightSabre;
 public class App {
 	public static void main(String[] args) {
 
-		LightSabre lightSabre = new LightSabre("LightSabre", 100);
-		Jedi jedi = new Jedi(lightSabre);
+		
+		BeanFactory beanFactory = new XmlBeanFactory(new ClassPathResource("beans.xml"));
 
+		Jedi jedi = beanFactory.getBean("joda", Jedi.class);
 		System.out.println(jedi.fight());
 
 	}
