@@ -9,7 +9,7 @@
 		<constructor-arg value="100" />
 	</bean>
 
-	<bean class="com.epam.botor.domain.LightSabre" id="redSabre">
+	<bean class="com.epam.botor.domain.LightSabre" id="redSabre" lazy-init="true">
 		<constructor-arg value="red sabre" />
 		<constructor-arg value="1000" />
 	</bean>
@@ -19,14 +19,13 @@
 		<constructor-arg value="1000" />
 	</bean>
 
-
 	
 	<bean class="com.epam.botor.domain.Jedi" id="joda">
 		<constructor-arg ref="lightSabre"/>
 	</bean>
 
 	<bean class="com.epam.botor.domain.Jedi" id="obiVanKenobi">
-		<constructor-arg ref="redSabre"/>
+		<constructor-arg ref="lightSabre"/>
 	</bean>
 
 	

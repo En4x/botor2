@@ -8,6 +8,7 @@ public class LightSabre {
 		super();
 		this.name = name;
 		this.damage = damage;
+		System.out.printf("Light sabre '%s' created.\n", name);
 	}
 	
 	public String hit() {
