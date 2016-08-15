@@ -1,6 +1,6 @@
 package com.epam.botor;
 
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.epam.botor.domain.Jedi;
@@ -12,11 +12,11 @@ import com.epam.botor.domain.Jedi;
 public class App {
 	public static void main(String[] args) {
 
+		try (ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("beans.xml")) {
+			Jedi jedi = context.getBean("joda", Jedi.class);
+			System.out.println(jedi.fight());
+		}
 		
-		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-
-		Jedi jedi = context.getBean("joda", Jedi.class);
-		System.out.println(jedi.fight());
 
 	}
 }
