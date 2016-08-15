@@ -4,7 +4,11 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<bean class="com.epam.botor.domain.LightSabre" id="lightSabre">
+	<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+
+
+	<bean class="com.epam.botor.domain.LightSabre" id="lightSabre" 
+			init-method="init" destroy-method="destroy2">
 		<constructor-arg value="LightSabre" />
 		<constructor-arg value="100" />
 	</bean>
