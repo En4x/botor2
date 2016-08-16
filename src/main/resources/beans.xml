@@ -57,6 +57,12 @@
 		<property name="lightSabre" value="Joda slicer, 1000" />
 	</bean>
 
+
+	<bean class="com.epam.botor.domain.BlasterPistol" scope="prototype">
+		<constructor-arg value="Blaster pistol"/>
+		<constructor-arg value="#{ 95 + (T(java.lang.Math).random() * 10.0) }"/>
+	</bean>
+	
 	<bean class="com.epam.botor.domain.Jedi" id="obiVanKenobi">
 		<constructor-arg value="MALE" type="com.epam.botor.domain.Gender" />
 		<constructor-arg value="Obi Van Kenobi" type="java.lang.String" />
@@ -149,6 +155,21 @@
 		<property name="leader.lightSabre" value="Dark army leader sabre, 300"/>
 	</bean>
 	
+	<!-- The Battle -->
+	<bean class="com.epam.botor.domain.Battle">
+		<constructor-arg> 
+			<bean class="com.epam.botor.domain.Battleground">
+				<constructor-arg value="battle ground"/>
+				<constructor-arg value="DRY"/>
+			</bean>
+		</constructor-arg>
+		<constructor-arg>
+			<util:map>
+				<entry key="LIGHT" value-ref="armyOfLight"/>
+				<entry key="DARK" value-ref="armyOfDark"/>
+			</util:map>
+		</constructor-arg>
+	</bean>
 	<!-- Map example -->
 	<bean id="map" class="java.util.HashMap" >
 	    <constructor-arg>

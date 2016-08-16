@@ -1,13 +1,17 @@
 package com.epam.botor.domain;
 
-import java.util.List;
+import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Battle {
-
+	Logger LOGGER = LoggerFactory.getLogger(Battle.class);
+	
     private final Battleground battleground;
-    private final List<Army> armies;
+    private final Map<ArmyType, Army> armies;
 
-    public Battle(final Battleground battleground, final List<Army> armies) {
+    public Battle(final Battleground battleground, final Map<ArmyType, Army> armies) {
         super();
         this.battleground = battleground;
         this.armies = armies;
@@ -17,8 +21,13 @@ public class Battle {
         return battleground;
     }
 
-    public List<Army> getArmies() {
+    public Map<ArmyType, Army> getArmies() {
         return armies;
+    }
+    
+    public void battle() {
+    	//TODO: implement
+    	LOGGER.debug("" + armies);
     }
 
 }

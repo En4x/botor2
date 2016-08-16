@@ -7,4 +7,10 @@ public class BlasterPistol extends Weapon implements Blaster {
         // TODO Auto-generated constructor stub
     }
 
+	@Override
+	public String toString() {
+		return "BlasterPistol [getName()=" + getName() + ", getDamage()=" + getDamage() + "]";
+	}
+
+    
 }

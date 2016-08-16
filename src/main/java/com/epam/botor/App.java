@@ -6,6 +6,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.epam.botor.domain.Army;
+import com.epam.botor.domain.Battle;
+import com.epam.botor.domain.BlasterPistol;
 import com.epam.botor.domain.Jedi;
 import com.epam.botor.domain.LightSabre;
 
@@ -20,53 +22,14 @@ public class App {
 		
 		try (ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("beans.xml")) {
 			
-			LightSabre red;  
-			red = context.getBean("redSabre", LightSabre.class);
-			LOGGER.debug(red + ": " + red.getIdentityHashCode());
-
-			red = context.getBean("redSabre", LightSabre.class);
-			LOGGER.debug(red + ": " + red.getIdentityHashCode());
-
-			red = context.getBean("redSabre", LightSabre.class);
-			LOGGER.debug(red + ": " + red.getIdentityHashCode());
-
-			LightSabre blue;  
-			blue = context.getBean("blueSabre", LightSabre.class);
-			LOGGER.debug(blue + ": " + blue.getIdentityHashCode());
-
-			blue = context.getBean("blueSabre", LightSabre.class);
-			LOGGER.debug(blue + ": " + blue.getIdentityHashCode());
-
-			blue = context.getBean("blueSabre", LightSabre.class);
-			LOGGER.debug(blue + ": " + blue.getIdentityHashCode());
-
-			
-			LOGGER.debug("" + context.getBean("sidius", Jedi.class));
-			
-			LOGGER.debug("" + context.getBean("uglyLightSabre"));
-			
-			LOGGER.debug("" + context.getBean("freeMemoryLightSabre"));
-			LOGGER.debug("" + context.getBean("obiVanKenobi"));
-			LOGGER.debug("" + context.getBean("anakin", Jedi.class).getLightSabre().getIdentityHashCode());
-			LOGGER.debug("" + context.getBean("anakin", Jedi.class).getLightSabre().getIdentityHashCode());
-			
-			Jedi jedi = context.getBean("joda", Jedi.class);
-			
-			LOGGER.debug(jedi.fight());
-			
-			
-			LOGGER.debug("" + context.getBean("map").getClass());
-			LOGGER.debug("" + context.getBean("map2").getClass());
-			LOGGER.debug("" + context.getBean("armyOfLight"));
-			LOGGER.debug("" + context.getBean("armyOfDark"));
-			LOGGER.debug("" + ((Jedi)context.getBean("armyOfDark", Army.class).getLeader()).getLightSabre());
-			
-			
+			Battle battle = context.getBean(Battle.class);
+			battle.battle();
 			
 		}
 		
 
 	}
 }
+
 
 
