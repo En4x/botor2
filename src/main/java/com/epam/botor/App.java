@@ -53,6 +53,8 @@ public class App {
 			
 			LOGGER.debug(jedi.fight());
 			
+			LOGGER.debug("" + context.getBean("armyOfLight"));
+			
 			
 			
 		}

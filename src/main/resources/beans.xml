@@ -108,5 +108,27 @@
 	<bean id="jodaName" class="java.lang.String">
 		<constructor-arg type="String" value="   Mr. Joda   " />
 	</bean>
+	
+	<!-- Army of light -->
+	<bean class="com.epam.botor.domain.Army" id="armyOfLight">
+		<constructor-arg ref="joda"/>
+		<constructor-arg>
+			<set>
+				<ref bean="obiVanKenobi"/>
+				<ref bean="anakin"/>
+			</set>				
+		</constructor-arg>
+	</bean>
+	
+	<!-- Army of dark -->
+	<bean class="com.epam.botor.domain.Army" id="armyOfDark">
+		<constructor-arg ref="gezaGizner"/>
+		<constructor-arg>
+			<set>
+				<ref bean="darthVader"/>
+				<ref bean="sidius"/>
+			</set>				
+		</constructor-arg>
+	</bean>
 </beans>
 

@@ -21,4 +21,10 @@ public class Army {
         return fighters;
     }
 
+	@Override
+	public String toString() {
+		return "Army [leader=" + leader + ", fighters=" + fighters + "]";
+	}
+
+    
 }
