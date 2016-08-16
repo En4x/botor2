@@ -17,6 +17,8 @@ public class Jedi extends Person implements ForceUser {
 	
 	private Jedi padavan; 
 	
+
+
 	@ConstructorProperties( { "name", "gender"})
     public Jedi(String name, Gender gender) {
 		super(name, gender);
@@ -64,7 +66,9 @@ public class Jedi extends Person implements ForceUser {
 		this.padavan = padavan;
 	}
 	
-	
+	public Jedi getPadavan() {
+		return padavan;
+	}
 	
 	
 }

@@ -25,7 +25,7 @@ public class App {
 			Battle battle = context.getBean(Battle.class);
 			
 			battle.battle();
-			LOGGER.debug(context.getBean("obiVanKenobi", Jedi.class).getLightSabre().toString());
+			LOGGER.debug("" + context.getBean("obiVanKenobi", Jedi.class).getPadavan());
 			
 		}
 		

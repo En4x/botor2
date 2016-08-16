@@ -63,7 +63,7 @@
 		<constructor-arg value="#{ 95 + (T(java.lang.Math).random() * 10.0) }"/>
 	</bean>
 	
-	<bean class="com.epam.botor.domain.Jedi" id="obiVanKenobi" autowire="byType">
+	<bean class="com.epam.botor.domain.Jedi" id="obiVanKenobi" autowire="byType" autowire-candidate="false">
 		<constructor-arg value="MALE" type="com.epam.botor.domain.Gender" />
 		<constructor-arg value="Obi Van Kenobi" type="java.lang.String" />
 <!-- 		<property name="padavan" ref="anakin" /> -->
@@ -128,13 +128,13 @@
 		<ref bean="trooper"/>
 	</util:list>
 	
-	<bean class="com.epam.botor.domain.Army" id="armyOfLight">
-		<constructor-arg ref="joda"/>
+	<bean class="com.epam.botor.domain.Army" id="armyOfLight" autowire="constructor">
+<!--  		<constructor-arg ref="joda"/>  -->
 		<constructor-arg ref="lightFighters"/>
 	</bean>
 	
 	<!-- Army of dark -->
-	<bean class="com.epam.botor.domain.Trooper" name="trooper" scope="prototype">
+	<bean class="com.epam.botor.domain.Trooper" name="trooper" scope="prototype" autowire-candidate="false">
 		<constructor-arg value="no name trooper"/>
 		<constructor-arg value="MALE"/>
 	</bean>
