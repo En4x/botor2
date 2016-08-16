@@ -12,6 +12,7 @@
 		<property name="customEditors">
 			<map>
 				<entry key="com.epam.botor.domain.LightSabre" value="com.epam.botor.propertyeditors.LightSabreEditor" />
+				<entry key="java.lang.String" value="com.epam.botor.propertyeditors.MyStringTrimmerEditor" />
 			</map>
 		</property>
 	</bean>
@@ -28,7 +29,7 @@
 	<bean class="com.epam.botor.domain.LightSabre" id="redSabre"
 		lazy-init="true">
 		<property name="color" value="RED" />
-		<constructor-arg value="red sabre" type="java.lang.String" />
+		<constructor-arg value="   red sabre   " type="java.lang.String" />
 		<constructor-arg value="1000" />
 	</bean>
 
@@ -53,7 +54,7 @@
 	</bean>
 
 	<bean class="com.epam.botor.domain.Jedi" id="anakin">
-		<constructor-arg value="Anakin Skywalker" />
+		<constructor-arg value="    Anakin Skywalker   " />
 		<constructor-arg value="MALE" />
 	</bean>
 
@@ -90,7 +91,7 @@
 	<bean class="java.lang.Runtime" factory-method="getRuntime" id="runtime" />
 
 	<bean id="jodaName" class="java.lang.String">
-		<constructor-arg type="String" value="Mr. Joda" />
+		<constructor-arg type="String" value="   Mr. Joda   " />
 	</bean>
 </beans>
 
