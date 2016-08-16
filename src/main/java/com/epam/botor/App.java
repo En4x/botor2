@@ -53,10 +53,11 @@ public class App {
 			
 			LOGGER.debug(jedi.fight());
 			
-			LOGGER.debug("" + context.getBean("armyOfLight"));
 			
 			LOGGER.debug("" + context.getBean("map").getClass());
 			LOGGER.debug("" + context.getBean("map2").getClass());
+			LOGGER.debug("" + context.getBean("armyOfLight"));
+			LOGGER.debug("" + context.getBean("armyOfDark"));
 			
 			
 			

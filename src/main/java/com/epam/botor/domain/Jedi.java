@@ -11,6 +11,7 @@ public class Jedi extends Person implements ForceUser {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(Jedi.class);
 	
+	public static final String THE_NAME_OF_THE_DARK_LEADER = "Geza Gizner";
 	
 	private LightSabre lightSabre;
 	

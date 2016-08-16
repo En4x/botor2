@@ -81,8 +81,9 @@
 		<property name="lightSabre" ref="lightSabre" />
 	</bean>
 
+	<util:constant id="darkLeaderName" static-field="com.epam.botor.domain.Jedi.THE_NAME_OF_THE_DARK_LEADER"/>
 	<bean class="com.epam.botor.domain.Jedi" id="gezaGizner">
-		<constructor-arg value="Geza Gizner" name="name" />
+		<constructor-arg ref="darkLeaderName" name="name" />
 		<constructor-arg value="MALE" name="gender" />
 		<property name="lightSabre" ref="blueSabre" />
 	</bean>
