@@ -49,6 +49,9 @@ public class App {
 			LOGGER.debug("" + context.getBean("uglyLightSabre"));
 			
 			LOGGER.debug("" + context.getBean("freeMemoryLightSabre"));
+			LOGGER.debug("" + context.getBean("obiVanKenobi"));
+			LOGGER.debug("" + context.getBean("anakin"));
+			
 			
 		}
 		

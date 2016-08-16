@@ -30,13 +30,19 @@
 	
 	<bean class="com.epam.botor.domain.Jedi" id="joda">
 		<constructor-arg value="MALE" index="1"/>
-		<constructor-arg value="Joda" index="0"/>
+		<constructor-arg ref="jodaName" index="0"/>
 	</bean>
 
 	<bean class="com.epam.botor.domain.Jedi" id="obiVanKenobi">
 		<constructor-arg value="MALE" type="com.epam.botor.domain.Gender"/>
 		<constructor-arg value="Obi Van Kenobi" type="java.lang.String"/>
+		<property name="padavan" ref="anakin"/>
 		<property name="lightSabre" ref="lightSabre"/>
+	</bean>
+
+	<bean class="com.epam.botor.domain.Jedi" id="anakin">
+		<constructor-arg value="Anakin Skywalker"/>
+		<constructor-arg value="MALE"/>
 	</bean>
 
 	<bean class="com.epam.botor.domain.Jedi" id="darthVader">
@@ -69,6 +75,8 @@
 	
 	<bean class="java.lang.Runtime" factory-method="getRuntime" id="runtime"/>
 	
-	
+	<bean id="jodaName" class="java.lang.String">
+    	<constructor-arg type="String" value="Mr. Joda"/>
+    </bean>
 </beans>
 
