@@ -55,7 +55,8 @@ public class App {
 			
 			LOGGER.debug("" + context.getBean("armyOfLight"));
 			
-			LOGGER.debug("" + context.getBean("map"));
+			LOGGER.debug("" + context.getBean("map").getClass());
+			LOGGER.debug("" + context.getBean("map2").getClass());
 			
 			
 			
