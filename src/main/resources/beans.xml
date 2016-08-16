@@ -11,11 +11,20 @@
 	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
 		<property name="customEditors">
 			<map>
-				<entry key="com.epam.botor.domain.LightSabre" value="com.epam.botor.propertyeditors.LightSabreEditor" />
+<!-- 				<entry key="com.epam.botor.domain.LightSabre" value="com.epam.botor.propertyeditors.LightSabreEditor" /> -->
 				<entry key="java.lang.String" value="com.epam.botor.propertyeditors.MyStringTrimmerEditor" />
 			</map>
 		</property>
 	</bean>
+
+	<bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+	<property name="converters">
+		<list>
+			<bean class="com.epam.botor.converters.LightSabreConverter"/>
+		</list>
+	</property>
+</bean>
+	
 
 	<bean class="com.epam.botor.beanpostprocessors.SayRiseBeanPostProcessor" />
 
