@@ -54,9 +54,15 @@ public class Jedi extends Person implements ForceUser {
 		this.lightSabre = lightSabre;
 	}
 
+	
+	public LightSabre getLightSabre() {
+		return lightSabre;
+	}
+
 	public void setPadavan(Jedi padavan) {
 		this.padavan = padavan;
 	}
+	
 	
 	
 	

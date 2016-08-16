@@ -46,7 +46,8 @@ public class App {
 			
 			LOGGER.debug("" + context.getBean("freeMemoryLightSabre"));
 			LOGGER.debug("" + context.getBean("obiVanKenobi"));
-			LOGGER.debug("" + context.getBean("anakin"));
+			LOGGER.debug("" + context.getBean("anakin", Jedi.class).getLightSabre().getIdentityHashCode());
+			LOGGER.debug("" + context.getBean("anakin", Jedi.class).getLightSabre().getIdentityHashCode());
 			
 			Jedi jedi = context.getBean("joda", Jedi.class);
 			

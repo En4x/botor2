@@ -65,6 +65,12 @@
 	<bean class="com.epam.botor.domain.Jedi" id="anakin">
 		<constructor-arg value="    Anakin Skywalker   " />
 		<constructor-arg value="MALE" />
+		<property name="lightSabre">
+			<bean class="com.epam.botor.domain.LightSabre">
+				<constructor-arg value="Anakin's light sabre" />
+				<constructor-arg value="10000" type="int"/>
+			</bean>
+		</property>
 	</bean>
 
 	<bean class="com.epam.botor.domain.Jedi" id="darthVader">
