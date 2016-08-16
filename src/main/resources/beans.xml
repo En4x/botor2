@@ -155,28 +155,25 @@
 		<property name="leader.lightSabre" value="Dark army leader sabre, 300"/>
 	</bean>
 	
+	<bean class="com.epam.botor.domain.Army">
+		<constructor-arg ref="obiVanKenobi" />
+		<constructor-arg
+			value="#{@lightFighters.?[#this.class.simpleName eq 'Jedi']}" />
+	</bean>
+	
 	<!-- The Battle -->
-	<bean class="com.epam.botor.domain.Battle">
+	<bean class="com.epam.botor.domain.Battle" autowire="constructor">
 		<constructor-arg> 
 			<bean class="com.epam.botor.domain.Battleground">
 				<constructor-arg value="battle ground"/>
 				<constructor-arg value="DRY"/>
 			</bean>
 		</constructor-arg>
-		<constructor-arg>
-			<util:map>
-				<entry key="LIGHT" value-ref="armyOfLight"/>
-				<entry key="DARK" value-ref="armyOfDark"/>
-				<entry key="ELITE">
-					<bean class="com.epam.botor.domain.Army">
-						 <constructor-arg ref="obiVanKenobi"/>
-						 <constructor-arg value="#{@lightFighters.?[#this.class.simpleName eq 'Jedi']}"/>
-					</bean>
-				</entry>
-
-			</util:map>
-		</constructor-arg>
 	</bean>
+
+
+					
+					
 	<!-- Map example -->
 	<bean id="map" class="java.util.HashMap" >
 	    <constructor-arg>

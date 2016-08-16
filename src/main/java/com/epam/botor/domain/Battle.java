@@ -9,9 +9,9 @@ public class Battle {
 	Logger LOGGER = LoggerFactory.getLogger(Battle.class);
 	
     private final Battleground battleground;
-    private final Map<ArmyType, Army> armies;
+    private final Map<String, Army> armies;
 
-    public Battle(final Battleground battleground, final Map<ArmyType, Army> armies) {
+    public Battle(final Battleground battleground, final Map<String, Army> armies) {
         super();
         this.battleground = battleground;
         this.armies = armies;
@@ -21,7 +21,7 @@ public class Battle {
         return battleground;
     }
 
-    public Map<ArmyType, Army> getArmies() {
+    public Map<String, Army> getArmies() {
         return armies;
     }
     
