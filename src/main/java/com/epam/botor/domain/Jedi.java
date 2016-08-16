@@ -47,7 +47,7 @@ public class Jedi extends Person implements ForceUser {
 	
 	@Override
 	public String toString() {
-		return "Jedi [lightSabre=" + lightSabre + ", padavan=" + (padavan == null ? "[n/a]" : padavan.getName()) + ", toString()=" + super.toString() + "]";
+		return "Jedi [" + getName() + "]";
 	}
 
 	public void setLightSabre(LightSabre lightSabre) {
