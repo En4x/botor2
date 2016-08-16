@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.epam.botor.domain.Army;
 import com.epam.botor.domain.Jedi;
 import com.epam.botor.domain.LightSabre;
 
@@ -58,6 +59,7 @@ public class App {
 			LOGGER.debug("" + context.getBean("map2").getClass());
 			LOGGER.debug("" + context.getBean("armyOfLight"));
 			LOGGER.debug("" + context.getBean("armyOfDark"));
+			LOGGER.debug("" + ((Jedi)context.getBean("armyOfDark", Army.class).getLeader()).getLightSabre());
 			
 			
 			

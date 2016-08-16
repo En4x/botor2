@@ -146,6 +146,7 @@
 				<ref bean="trooper"/>
 			</util:set>				
 		</constructor-arg>
+		<property name="leader.lightSabre" value="Dark army leader sabre, 300"/>
 	</bean>
 	
 	<!-- Map example -->
