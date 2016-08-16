@@ -27,7 +27,6 @@
 		<constructor-arg value="1000" />
 		<property name="color" value="BLUE" />
 	</bean>
-
 	
 	<bean class="com.epam.botor.domain.Jedi" id="joda">
 		<constructor-arg value="MALE" index="1"/>
@@ -62,6 +61,14 @@
 	<bean class="com.epam.botor.domain.LightSabre" factory-bean="obiVanKenobi"  factory-method="createUglyLightSabre" id="uglyLightSabre">
 		<constructor-arg value="1000"/>
 	</bean>
+	
+	<bean class="com.epam.botor.domain.LightSabre" id="freeMemoryLightSabre">
+		<constructor-arg value="Free memory light sabre"/>
+		<constructor-arg ref="runtime"/>
+	</bean>
+	
+	<bean class="java.lang.Runtime" factory-method="getRuntime" id="runtime"/>
+	
 	
 </beans>
 

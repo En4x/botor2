@@ -25,6 +25,11 @@ public class LightSabre extends Weapon implements EnergyWeapon, InitializingBean
         this.color = null;
     }
 
+    public LightSabre(final String name, final Runtime runtime) {
+        super(name, (int)runtime.freeMemory());
+        this.color = null;
+    }
+    
     
 	public int getIdentityHashCode() {
 		return System.identityHashCode(this);

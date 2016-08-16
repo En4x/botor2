@@ -48,6 +48,8 @@ public class App {
 			
 			LOGGER.debug("" + context.getBean("uglyLightSabre"));
 			
+			LOGGER.debug("" + context.getBean("freeMemoryLightSabre"));
+			
 		}
 		
 
