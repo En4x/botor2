@@ -23,6 +23,7 @@ public class App {
 		try (ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("beans.xml")) {
 			
 			Battle battle = context.getBean(Battle.class);
+			
 			battle.battle();
 			
 		}
