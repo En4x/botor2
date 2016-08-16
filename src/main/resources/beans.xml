@@ -144,6 +144,16 @@
 			</set>				
 		</constructor-arg>
 	</bean>
+	
+	<!-- Map example -->
+	<bean id="map" class="java.util.HashMap" >
+    <constructor-arg>
+        <map>
+            <entry key-ref="trooper" value="First" />
+            <entry key-ref="trooper" value="Second" />
+        </map>
+    </constructor-arg>
+</bean>
 </beans>
 
 
