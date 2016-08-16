@@ -22,13 +22,13 @@
 		</property>
 	</bean>
 
-	<bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
-	<property name="converters">
-		<list>
-			<bean class="com.epam.botor.converters.LightSabreConverter"/>
-		</list>
-	</property>
-</bean>
+	<bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean"
+		autowire="byName"/>
+	
+	<util:list id="converters">
+		<bean class="com.epam.botor.converters.LightSabreConverter"/>
+	</util:list>
+	
 	
 
 	<bean class="com.epam.botor.beanpostprocessors.SayRiseBeanPostProcessor" />
