@@ -36,7 +36,7 @@ public class LightSabre extends Weapon implements EnergyWeapon, InitializingBean
 	}
 
 	public String hit() {
-		return "Tyutyutyu";
+		return getName() + ": " + getDamage() + " * Tyutyutyu";
 	}
 
 	

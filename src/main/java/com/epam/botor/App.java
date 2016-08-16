@@ -18,10 +18,6 @@ public class App {
 	public static void main(String[] args) {
 		
 		try (ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("beans.xml")) {
-			Jedi jedi = context.getBean("joda", Jedi.class);
-			
-			
-			LOGGER.debug(jedi.fight());
 			
 			LightSabre red;  
 			red = context.getBean("redSabre", LightSabre.class);
@@ -51,6 +47,11 @@ public class App {
 			LOGGER.debug("" + context.getBean("freeMemoryLightSabre"));
 			LOGGER.debug("" + context.getBean("obiVanKenobi"));
 			LOGGER.debug("" + context.getBean("anakin"));
+			
+			Jedi jedi = context.getBean("joda", Jedi.class);
+			
+			LOGGER.debug(jedi.fight());
+			
 			
 			
 		}
