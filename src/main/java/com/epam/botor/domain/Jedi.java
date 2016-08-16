@@ -38,7 +38,7 @@ public class Jedi extends Person implements ForceUser {
 	}
 
 	public LightSabre createUglyLightSabre(int damage) {
-		return new LightSabre("Ugly light sabre of " + getName(), damage);
+		return new LightSabre("Ugly light sabre of " + getName(), damage, Color.RED);
 	}
 	
 	

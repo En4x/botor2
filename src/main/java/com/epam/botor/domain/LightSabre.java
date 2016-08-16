@@ -12,11 +12,26 @@ public class LightSabre extends Weapon implements EnergyWeapon, InitializingBean
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(Jedi.class);
 	
+	private final Color color;
+	
 	
     public LightSabre(final String name, final int damage) {
         super(name, damage);
+        this.color = null;
     }
 
+    public LightSabre(final String name, final String name2) {
+        super(name, -1);
+        this.color = null;
+    }
+
+    
+    
+    public LightSabre(final String name, final int damage, final Color color) {
+        super(name, damage);
+        this.color = color;
+    }
+    
 	public int getIdentityHashCode() {
 		return System.identityHashCode(this);
 	}
@@ -25,9 +40,10 @@ public class LightSabre extends Weapon implements EnergyWeapon, InitializingBean
 		return "Tyutyutyu";
 	}
 
+	
 	@Override
 	public String toString() {
-		return "LightSabre [toString()=" + super.toString() + "]";
+		return "LightSabre [color=" + color + ", toString()=" + super.toString() + "]";
 	}
 
 	@Override
