@@ -17,7 +17,7 @@
 	</bean>
 
 	<bean class="com.epam.botor.domain.LightSabre" id="redSabre" lazy-init="true">
-		<constructor-arg value="RED" index="2"/>
+		<property name="color" value="RED" />
 		<constructor-arg value="red sabre" type="java.lang.String"/>
 		<constructor-arg value="1000" />
 	</bean>
@@ -25,32 +25,31 @@
 	<bean class="com.epam.botor.domain.LightSabre" id="blueSabre" scope="prototype">
 		<constructor-arg value="blue sabre" />
 		<constructor-arg value="1000" />
-		<constructor-arg value="BLUE" />
+		<property name="color" value="BLUE" />
 	</bean>
 
 	
 	<bean class="com.epam.botor.domain.Jedi" id="joda">
 		<constructor-arg value="MALE" index="1"/>
 		<constructor-arg value="Joda" index="0"/>
-		<constructor-arg ref="lightSabre" index="2"/>
 	</bean>
 
 	<bean class="com.epam.botor.domain.Jedi" id="obiVanKenobi">
 		<constructor-arg value="MALE" type="com.epam.botor.domain.Gender"/>
-		<constructor-arg ref="lightSabre"/>
 		<constructor-arg value="Obi Van Kenobi" type="java.lang.String"/>
+		<property name="lightSabre" ref="lightSabre"/>
 	</bean>
 
 	<bean class="com.epam.botor.domain.Jedi" id="darthVader">
-		<constructor-arg ref="lightSabre" name="sabre"/>
 		<constructor-arg value="MALE" name="gender"/>
 		<constructor-arg value="Darth Vader" name="name"/>
+		<property name="lightSabre" ref="lightSabre"/>
 	</bean>
 
 	<bean class="com.epam.botor.domain.Jedi" id="gezaGizner">
 		<constructor-arg value="Geza Gizner" name="name"/>
 		<constructor-arg value="MALE" name="gender"/>
-		<constructor-arg ref="blueSabre" name="sabre"/>
+		<property name="lightSabre" ref="blueSabre"/>
 	</bean>
 	
 	

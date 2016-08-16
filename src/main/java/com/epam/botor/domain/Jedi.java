@@ -12,14 +12,13 @@ public class Jedi extends Person implements ForceUser {
 	private static final Logger LOGGER = LoggerFactory.getLogger(Jedi.class);
 	
 	
-	private final LightSabre lightSabre;
+	private LightSabre lightSabre;
 	
 	private Jedi padavan; 
 	
-	@ConstructorProperties( { "name", "gender", "sabre" })
-    public Jedi(String name, Gender gender, LightSabre lightSabre) {
+	@ConstructorProperties( { "name", "gender"})
+    public Jedi(String name, Gender gender) {
 		super(name, gender);
-		this.lightSabre = lightSabre;
 	}
 
 	@Override
@@ -28,17 +27,17 @@ public class Jedi extends Person implements ForceUser {
     }
 
 	public String fight() {
-		return lightSabre.hit();
+		return lightSabre == null ? "no sabre" : lightSabre.hit();
 	}
 
 	public static Jedi createJediMaster(String name, Jedi padavan) {
-		Jedi jedi = new Jedi(name, MALE, null);
+		Jedi jedi = new Jedi(name, MALE);
 		jedi.padavan = padavan;
 		return jedi;
 	}
 
 	public LightSabre createUglyLightSabre(int damage) {
-		return new LightSabre("Ugly light sabre of " + getName(), damage, Color.RED);
+		return new LightSabre("Ugly light sabre of " + getName(), damage);
 	}
 	
 	
@@ -50,6 +49,11 @@ public class Jedi extends Person implements ForceUser {
 	public String toString() {
 		return "Jedi [lightSabre=" + lightSabre + ", padavan=" + padavan + ", toString()=" + super.toString() + "]";
 	}
+
+	public void setLightSabre(LightSabre lightSabre) {
+		this.lightSabre = lightSabre;
+	}
+	
 	
 	
 }
