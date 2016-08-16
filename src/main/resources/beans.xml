@@ -32,23 +32,29 @@
 
 	
 	<bean class="com.epam.botor.domain.Jedi" id="joda">
-		<constructor-arg value="Joda"/>
-		<constructor-arg value="MALE"/>
-		<constructor-arg ref="lightSabre"/>
+		<constructor-arg value="MALE" index="1"/>
+		<constructor-arg value="Joda" index="0"/>
+		<constructor-arg ref="lightSabre" index="2"/>
 	</bean>
 
 	<bean class="com.epam.botor.domain.Jedi" id="obiVanKenobi">
-		<constructor-arg value="Obi Van Kenobi"/>
-		<constructor-arg value="MALE"/>
+		<constructor-arg value="MALE" type="com.epam.botor.domain.Gender"/>
 		<constructor-arg ref="lightSabre"/>
+		<constructor-arg value="Obi Van Kenobi" type="java.lang.String"/>
 	</bean>
 
 	<bean class="com.epam.botor.domain.Jedi" id="darthVader">
-		<constructor-arg value="Darth Vader"/>
-		<constructor-arg value="MALE"/>
-		<constructor-arg ref="lightSabre"/>
+		<constructor-arg ref="lightSabre" name="sabre"/>
+		<constructor-arg value="MALE" name="gender"/>
+		<constructor-arg value="Darth Vader" name="name"/>
 	</bean>
 
+	<bean class="com.epam.botor.domain.Jedi" id="gezaGizner">
+		<constructor-arg value="Geza Gizner" name="name"/>
+		<constructor-arg value="MALE" name="gender"/>
+		<constructor-arg ref="blueSabre" name="sabre"/>
+	</bean>
+	
 	
 	<bean class="com.epam.botor.domain.Jedi" factory-method="createJediMaster" id="sidius">
 		<constructor-arg value="Sidius"/>

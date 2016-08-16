@@ -2,6 +2,8 @@ package com.epam.botor.domain;
 
 import static com.epam.botor.domain.Gender.MALE;
 
+import java.beans.ConstructorProperties;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,6 +16,7 @@ public class Jedi extends Person implements ForceUser {
 	
 	private Jedi padavan; 
 	
+	@ConstructorProperties( { "name", "gender", "sabre" })
     public Jedi(String name, Gender gender, LightSabre lightSabre) {
 		super(name, gender);
 		this.lightSabre = lightSabre;
