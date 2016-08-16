@@ -1,6 +1,8 @@
-package com.epam.botor.domain;
+package com.epam.botor.propertyeditors;
 
 import java.beans.PropertyEditorSupport;
+
+import com.epam.botor.domain.LightSabre;
 
 public class LightSabreEditor extends PropertyEditorSupport {
 

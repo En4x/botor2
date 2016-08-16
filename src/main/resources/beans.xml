@@ -1,83 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	default-init-method="defaultInit"
-	default-destroy-method="defaultDestroy"
+	default-init-method="defaultInit" default-destroy-method="defaultDestroy"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-	<context:annotation-config/>
-	<bean class="com.epam.botor.beanpostprocessors.SayRiseBeanPostProcessor"/>
+	<context:annotation-config />
 
-	<bean class="com.epam.botor.domain.LightSabre" id="lightSabre" 
-			init-method="init" destroy-method="destroy2">
-		<constructor-arg value="LightSabre"/>
-		<constructor-arg value="100" type="int"/>
+	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="customEditors">
+			<map>
+				<entry key="com.epam.botor.domain.LightSabre" value="com.epam.botor.propertyeditors.LightSabreEditor" />
+			</map>
+		</property>
 	</bean>
 
-	<bean class="com.epam.botor.domain.LightSabre" id="redSabre" lazy-init="true">
+	<bean class="com.epam.botor.beanpostprocessors.SayRiseBeanPostProcessor" />
+
+
+	<bean class="com.epam.botor.domain.LightSabre" id="lightSabre"
+		init-method="init" destroy-method="destroy2">
+		<constructor-arg value="LightSabre" />
+		<constructor-arg value="100" type="int" />
+	</bean>
+
+	<bean class="com.epam.botor.domain.LightSabre" id="redSabre"
+		lazy-init="true">
 		<property name="color" value="RED" />
-		<constructor-arg value="red sabre" type="java.lang.String"/>
+		<constructor-arg value="red sabre" type="java.lang.String" />
 		<constructor-arg value="1000" />
 	</bean>
 
-	<bean class="com.epam.botor.domain.LightSabre" id="blueSabre" scope="prototype">
+	<bean class="com.epam.botor.domain.LightSabre" id="blueSabre"
+		scope="prototype">
 		<constructor-arg value="blue sabre" />
 		<constructor-arg value="1000" />
 		<property name="color" value="BLUE" />
 	</bean>
-	
+
 	<bean class="com.epam.botor.domain.Jedi" id="joda">
-		<constructor-arg value="MALE" index="1"/>
-		<constructor-arg ref="jodaName" index="0"/>
+		<constructor-arg value="MALE" index="1" />
+		<constructor-arg ref="jodaName" index="0" />
 		<property name="lightSabre" value="Joda slicer, 1000" />
 	</bean>
 
 	<bean class="com.epam.botor.domain.Jedi" id="obiVanKenobi">
-		<constructor-arg value="MALE" type="com.epam.botor.domain.Gender"/>
-		<constructor-arg value="Obi Van Kenobi" type="java.lang.String"/>
-		<property name="padavan" ref="anakin"/>
-		<property name="lightSabre" ref="lightSabre"/>
+		<constructor-arg value="MALE" type="com.epam.botor.domain.Gender" />
+		<constructor-arg value="Obi Van Kenobi" type="java.lang.String" />
+		<property name="padavan" ref="anakin" />
+		<property name="lightSabre" ref="lightSabre" />
 	</bean>
 
 	<bean class="com.epam.botor.domain.Jedi" id="anakin">
-		<constructor-arg value="Anakin Skywalker"/>
-		<constructor-arg value="MALE"/>
+		<constructor-arg value="Anakin Skywalker" />
+		<constructor-arg value="MALE" />
 	</bean>
 
 	<bean class="com.epam.botor.domain.Jedi" id="darthVader">
-		<constructor-arg value="MALE" name="gender"/>
-		<constructor-arg value="Darth Vader" name="name"/>
-		<property name="lightSabre" ref="lightSabre"/>
+		<constructor-arg value="MALE" name="gender" />
+		<constructor-arg value="Darth Vader" name="name" />
+		<property name="lightSabre" ref="lightSabre" />
 	</bean>
 
 	<bean class="com.epam.botor.domain.Jedi" id="gezaGizner">
-		<constructor-arg value="Geza Gizner" name="name"/>
-		<constructor-arg value="MALE" name="gender"/>
-		<property name="lightSabre" ref="blueSabre"/>
-	</bean>
-	
-	
-	<bean class="com.epam.botor.domain.Jedi" factory-method="createJediMaster" id="sidius">
-		<constructor-arg value="Sidius"/>
-		<constructor-arg ref="darthVader"/>
+		<constructor-arg value="Geza Gizner" name="name" />
+		<constructor-arg value="MALE" name="gender" />
+		<property name="lightSabre" ref="blueSabre" />
 	</bean>
 
-	
-	<bean class="com.epam.botor.domain.LightSabre" factory-bean="obiVanKenobi"  factory-method="createUglyLightSabre" id="uglyLightSabre">
-		<constructor-arg value="1000"/>
+
+	<bean class="com.epam.botor.domain.Jedi" factory-method="createJediMaster"
+		id="sidius">
+		<constructor-arg value="Sidius" />
+		<constructor-arg ref="darthVader" />
 	</bean>
-	
+
+
+	<bean class="com.epam.botor.domain.LightSabre" factory-bean="obiVanKenobi"
+		factory-method="createUglyLightSabre" id="uglyLightSabre">
+		<constructor-arg value="1000" />
+	</bean>
+
 	<bean class="com.epam.botor.domain.LightSabre" id="freeMemoryLightSabre">
-		<constructor-arg value="Free memory light sabre"/>
-		<constructor-arg ref="runtime"/>
+		<constructor-arg value="Free memory light sabre" />
+		<constructor-arg ref="runtime" />
 	</bean>
-	
-	<bean class="java.lang.Runtime" factory-method="getRuntime" id="runtime"/>
-	
+
+	<bean class="java.lang.Runtime" factory-method="getRuntime" id="runtime" />
+
 	<bean id="jodaName" class="java.lang.String">
-    	<constructor-arg type="String" value="Mr. Joda"/>
-    </bean>
+		<constructor-arg type="String" value="Mr. Joda" />
+	</bean>
 </beans>
 
