@@ -12,6 +12,7 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 
 	<context:annotation-config />
+	<context:property-placeholder location="classpath:starwars.properties"/> 
 
 	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
 		<property name="customEditors">
@@ -44,12 +45,12 @@
 		lazy-init="true">
 		<property name="color" value="RED" />
 		<constructor-arg value="   red sabre   " type="java.lang.String" />
-		<constructor-arg value="1000" />
+		<constructor-arg value="${lightsabre.red.damage}" type="int"/>
 	</bean>
 
 	<bean class="com.epam.botor.domain.LightSabre" id="blueSabre"
 		scope="prototype"
-		c:name="blue sabre" c:damage="1000" p:color="BLUE"/>
+		c:name="blue sabre" c:damage="${lightsabre.blue.damage}" p:color="BLUE"/>
 
 	<bean class="com.epam.botor.domain.Jedi" id="joda"  autowire-candidate="false">
 		<constructor-arg value="MALE" index="1" />
@@ -128,8 +129,10 @@
 		<ref bean="trooper"/>
 	</util:list>
 	
-	<bean class="com.epam.botor.domain.Army" id="armyOfLight" autowire="constructor">
-<!--  		<constructor-arg ref="joda"/>  -->
+	
+	
+	<bean class="com.epam.botor.domain.Army" id="armyOfLight">
+ 		<constructor-arg ref="joda"/> 
 		<constructor-arg ref="lightFighters"/>
 	</bean>
 	
