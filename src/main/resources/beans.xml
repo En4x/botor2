@@ -15,6 +15,9 @@
 	
 	<context:property-placeholder location="classpath:starwars.properties"/> 
 
+	<bean class="com.epam.botor.config.StarWarsConfig"/>
+	
+	
 	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
 		<property name="customEditors">
 			<map>
@@ -42,12 +45,12 @@
 		<constructor-arg value="100" type="int" />
 	</bean>
 
-	<bean class="com.epam.botor.domain.LightSabre" id="redSabre"
-		lazy-init="true">
-		<property name="color" value="RED" />
-		<constructor-arg value="   red sabre   " type="java.lang.String" />
-		<constructor-arg value="${lightsabre.red.damage}" type="int"/>
-	</bean>
+<!-- 	<bean class="com.epam.botor.domain.LightSabre" id="redSabre" -->
+<!-- 		lazy-init="true"> -->
+<!-- 		<property name="color" value="RED" /> -->
+<!-- 		<constructor-arg value="   red sabre   " type="java.lang.String" /> -->
+<!-- 		<constructor-arg value="${lightsabre.red.damage}" type="int"/> -->
+<!-- 	</bean> -->
 
 	<bean class="com.epam.botor.domain.LightSabre" id="yellowSabre"
 		scope="prototype"
@@ -76,7 +79,7 @@
 <!-- 		<property name="lightSabre" ref="lightSabre" /> -->
 	</bean>
 
-	<bean class="com.epam.botor.domain.Jedi" id="anakin">
+	<bean class="com.epam.botor.domain.Jedi" id="anakin" primary="true">
 		<constructor-arg value="    Anakin Skywalker   " />
 		<constructor-arg value="MALE" />
 		<property name="lightSabre">
@@ -87,11 +90,11 @@
 		</property>
 	</bean>
 
-	<bean class="com.epam.botor.domain.Jedi" id="darthVader"  autowire-candidate="false">
-		<constructor-arg value="MALE" name="gender" />
-		<constructor-arg value="Darth Vader" name="name" />
-		<property name="lightSabre" ref="lightSabre" />
-	</bean>
+<!-- 	<bean class="com.epam.botor.domain.Jedi" id="darthVader"  autowire-candidate="false"> -->
+<!-- 		<constructor-arg value="MALE" name="gender" /> -->
+<!-- 		<constructor-arg value="Darth Vader" name="name" /> -->
+<!-- 		<property name="lightSabre" ref="lightSabre" /> -->
+<!-- 	</bean> -->
 
 	<util:constant id="darkLeaderName" static-field="com.epam.botor.domain.Jedi.THE_NAME_OF_THE_DARK_LEADER"/>
 	<bean class="com.epam.botor.domain.Jedi" id="gezaGizner"  autowire-candidate="false">

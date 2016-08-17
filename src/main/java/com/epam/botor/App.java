@@ -23,7 +23,7 @@ public class App {
 		try (ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("beans.xml")) {
 			
 			Battle battle = context.getBean("starWarsBattle", Battle.class);
-			LOGGER.debug(context.getBean("wetBattleground").toString());
+			LOGGER.debug(context.getBean("darthVader").toString());
 			battle.battle();
 			
 			
