@@ -1,10 +1,7 @@
 package com.epam.botor.domain;
 
-import org.springframework.beans.factory.annotation.Value;
-
 public class Battleground {
 
-	@Value("${battleground.default.name}")
     private final String name;
     private BattlegroundType type;
 

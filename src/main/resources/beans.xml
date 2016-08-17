@@ -180,6 +180,11 @@
 		<constructor-arg value="WET"/>
 	</bean>
 	
+	<util:map id="armiesOfBattle">
+		<entry key="armyOfLight" value-ref="armyOfLight"/>
+		<entry key="armyOfDark" value-ref="armyOfDark"/>
+	</util:map>
+	
 	<bean class="com.epam.botor.domain.Battle"/>
 					
 	<!--  Factory bean -->
