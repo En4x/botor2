@@ -180,6 +180,8 @@
 
 
 					
+	<!--  Factory bean -->
+	<bean id="commonBlaster" class="com.epam.botor.domain.BlasterFactoryBean" c:name="blaster" c:damage="100"/>
 					
 	<!-- Map example -->
 	<bean id="map" class="java.util.HashMap" >
