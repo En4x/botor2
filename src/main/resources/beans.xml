@@ -170,16 +170,17 @@
 	</bean>
 	
 	<!-- The Battle -->
-	<bean class="com.epam.botor.domain.Battle" autowire="constructor">
-		<constructor-arg> 
-			<bean class="com.epam.botor.domain.Battleground">
-				<constructor-arg value="battle ground"/>
-				<constructor-arg value="DRY"/>
-			</bean>
-		</constructor-arg>
+	<bean class="com.epam.botor.domain.Battleground">
+		<constructor-arg value="dry battle ground"/>
+		<constructor-arg value="DRY"/>
 	</bean>
-
-
+	<bean class="com.epam.botor.domain.Battleground">
+		<qualifier value="defaultBattleGround"/>
+		<constructor-arg value="wet battle ground"/>
+		<constructor-arg value="WET"/>
+	</bean>
+	
+	<bean class="com.epam.botor.domain.Battle"/>
 					
 	<!--  Factory bean -->
 	<bean id="commonBlaster" class="com.epam.botor.domain.BlasterFactoryBean" c:name="blaster" c:damage="100"/>

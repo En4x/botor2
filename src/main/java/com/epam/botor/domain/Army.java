@@ -7,6 +7,7 @@ public class Army {
     private final Person leader;
     private final Set<Person> fighters;
 
+    
     public Army(final Person leader, final Set<Person> fighters) {
         super();
         this.leader = leader;

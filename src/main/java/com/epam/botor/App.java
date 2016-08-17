@@ -25,11 +25,6 @@ public class App {
 			Battle battle = context.getBean(Battle.class);
 			
 			battle.battle();
-			LOGGER.debug("" + context.getBean("commonBlaster").getClass());
-			LOGGER.debug("" + context.getBean("commonBlaster").getClass());
-			LOGGER.debug("" + context.getBean("commonBlaster").getClass());
-			LOGGER.debug("" + context.getBean("commonBlaster").getClass());
-			LOGGER.debug("" + context.getBean("commonBlaster").getClass());
 			
 			
 		}

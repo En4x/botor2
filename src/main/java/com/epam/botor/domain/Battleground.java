@@ -23,4 +23,10 @@ public class Battleground {
         this.type = type;
     }
 
+	@Override
+	public String toString() {
+		return "Battleground [name=" + name + ", type=" + type + "]";
+	}
+
+    
 }

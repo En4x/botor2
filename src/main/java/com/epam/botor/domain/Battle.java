@@ -4,18 +4,20 @@ import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Battle {
 	Logger LOGGER = LoggerFactory.getLogger(Battle.class);
-	
-    private final Battleground battleground;
-    private final Map<String, Army> armies;
 
-    public Battle(final Battleground battleground, final Map<String, Army> armies) {
-        super();
-        this.battleground = battleground;
-        this.armies = armies;
-    }
+	
+	@Autowired
+	@Qualifier("defaultBattleGround")
+    private Battleground battleground;
+
+	@Autowired
+    private Map<String, Army> armies;
+
 
     public Battleground getBattleground() {
         return battleground;
@@ -27,7 +29,13 @@ public class Battle {
     
     public void battle() {
     	//TODO: implement
-    	LOGGER.debug("" + armies);
+    	LOGGER.debug(toString());
     }
 
+	@Override
+	public String toString() {
+		return "Battle [battleground=" + battleground + ", armies=" + armies + "]";
+	}
+
+    
 }
