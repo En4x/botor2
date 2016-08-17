@@ -36,7 +36,7 @@
 
 
 	<bean class="com.epam.botor.domain.LightSabre" id="lightSabre"
-		init-method="init" destroy-method="destroy2" primary="true">
+		init-method="init" destroy-method="destroy2" primary="true" scope="prototype">
 		<constructor-arg value="LightSabre" />
 		<constructor-arg value="100" type="int" />
 	</bean>
@@ -104,6 +104,7 @@
 		id="sidius"  autowire-candidate="false">
 		<constructor-arg value="Sidius" />
 		<constructor-arg ref="darthVader" />
+		<property name="lightSabre" ref="lightSabre"/>
 	</bean>
 
 
