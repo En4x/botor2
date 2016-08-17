@@ -3,10 +3,8 @@ package com.epam.botor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.GenericGroovyApplicationContext;
 
-import com.epam.botor.config.StarWarsConfig;
 import com.epam.botor.domain.Battle;
 
 /**
@@ -18,7 +16,8 @@ public class App {
 	
 	public static void main(String[] args) {
 		
-		try (ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(StarWarsConfig.class)) {
+		try (ConfigurableApplicationContext context = 
+				new GenericGroovyApplicationContext("file:applicationContext.groovy");) {
 			
 			Battle battle = context.getBean("starWarsBattle", Battle.class);
 			LOGGER.debug(context.getBean("redSabre").toString());

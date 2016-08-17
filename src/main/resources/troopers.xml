@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<troopers>
+    <trooper name="Trooper fellow 1" gender="MALE"/>
+    <trooper name="Trooper fellow 2" gender="MALE"/>
+    <trooper name="Trooper fellow 3" gender="FEMALE"/>
+</troopers>

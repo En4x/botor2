@@ -23,7 +23,7 @@ import com.epam.botor.propertyeditors.MyStringTrimmerEditor;
 
 @Configuration
 @ImportResource("classpath:beans.xml")
-@Import({ JediConfig.class, LightSabreConfiguration.class })
+@Import({ JediConfig.class, LightSabreConfiguration.class, ArmyConfig.class })
 @PropertySource("classpath:starwars.properties")
 @ComponentScan(basePackages = "com.epam.botor.domain")
 public class StarWarsConfig {

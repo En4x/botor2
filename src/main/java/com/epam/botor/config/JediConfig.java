@@ -42,12 +42,15 @@ public class JediConfig {
 	public Army armyOfLight() {
 		
 		Set<Person> lightFighters = new HashSet<>();
-		lightFighters.add(ctx.getBean(Trooper.class));
-		lightFighters.add(ctx.getBean(Trooper.class));
-		lightFighters.add(ctx.getBean(Trooper.class));
-		lightFighters.add(ctx.getBean(Trooper.class));
+		lightFighters.add(ctx.getBean("trooper", Trooper.class));
+		lightFighters.add(ctx.getBean("trooper", Trooper.class));
+		lightFighters.add(ctx.getBean("trooper", Trooper.class));
+		lightFighters.add(ctx.getBean("trooper", Trooper.class));
 		
-		return new Army(ctx.getBean("joda", Jedi.class), lightFighters);
+		Army army = new Army();
+		army.setLeader(ctx.getBean("joda", Jedi.class));
+		army.setFighters(lightFighters);
+		return army;
 		
 	}
 

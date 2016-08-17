@@ -2,8 +2,8 @@ package com.epam.botor.domain;
 
 public abstract class Person {
 
-    private final String name;
-    private final Gender gender;
+    private String name;
+    private Gender gender;
 
     public Person(final String name, final Gender gender) {
         super();
@@ -18,6 +18,16 @@ public abstract class Person {
     public Gender getGender() {
         return gender;
     }
+
+    
+    
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
 
 	@Override
 	public String toString() {
