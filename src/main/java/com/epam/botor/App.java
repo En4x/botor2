@@ -5,11 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.epam.botor.domain.Army;
 import com.epam.botor.domain.Battle;
-import com.epam.botor.domain.BlasterPistol;
-import com.epam.botor.domain.Jedi;
-import com.epam.botor.domain.LightSabre;
 
 /**
  * Jedi Application
@@ -23,7 +19,7 @@ public class App {
 		try (ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("beans.xml")) {
 			
 			Battle battle = context.getBean("starWarsBattle", Battle.class);
-			LOGGER.debug(context.getBean("darthVader").toString());
+			LOGGER.debug(context.getBean("redSabre").toString());
 			battle.battle();
 			
 			

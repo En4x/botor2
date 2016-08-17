@@ -11,6 +11,7 @@ import com.epam.botor.domain.LightSabre;
 @Configuration
 public class JediConfig {
 
+
 	@Bean
 	public Jedi darthVader(LightSabre lightSabre) {
 		Jedi darthVader = new Jedi("Darth Vader", MALE);
