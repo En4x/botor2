@@ -23,6 +23,8 @@ import org.springframework.core.convert.converter.Converter;
 
 import com.epam.botor.beanpostprocessors.SayRiseBeanPostProcessor;
 import com.epam.botor.converters.LightSabreConverter;
+import com.epam.botor.domain.Fight;
+import com.epam.botor.domain.FightEventHandler;
 import com.epam.botor.propertyeditors.MyStringTrimmerEditor;
 
 @Configuration
@@ -78,5 +80,15 @@ public class StarWarsConfig {
 	@Bean
 	public Locale locale(@Value("${locale.lang}") String lang, @Value("${locale.country}") String country) {
 		return new Locale(lang, country);
+	}
+	
+	@Bean
+	public Fight fight() {
+		return new Fight();
+	}
+	
+	@Bean
+	public FightEventHandler fightEventHandler() {
+		return new FightEventHandler();
 	}
 }

@@ -6,6 +6,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.GenericGroovyApplicationContext;
 
 import com.epam.botor.domain.Battle;
+import com.epam.botor.domain.Fight;
 
 /**
  * Jedi Application
@@ -20,7 +21,7 @@ public class App {
 				new GenericGroovyApplicationContext("file:applicationContext.groovy");) {
 			
 			Battle battle = context.getBean("starWarsBattle", Battle.class);
-			LOGGER.debug(context.getBean("redSabre").toString());
+			context.getBean(Fight.class).fight();
 			battle.battle();
 			
 			
