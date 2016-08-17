@@ -68,10 +68,10 @@
 	</bean>
 
 
-	<bean class="com.epam.botor.domain.BlasterPistol" scope="prototype">
-		<constructor-arg value="Blaster pistol"/>
-		<constructor-arg value="#{ 95 + (T(java.lang.Math).random() * 10.0) }"/>
-	</bean>
+<!-- 	<bean class="com.epam.botor.domain.BlasterPistol" scope="prototype"> -->
+<!-- 		<constructor-arg value="Blaster pistol"/> -->
+<!-- 		<constructor-arg value="#{ 95 + (T(java.lang.Math).random() * 10.0) }"/> -->
+<!-- 	</bean> -->
 	
 	<bean class="com.epam.botor.domain.Jedi" id="obiVanKenobi" autowire="byType" autowire-candidate="false">
 		<constructor-arg value="MALE" type="com.epam.botor.domain.Gender" />
