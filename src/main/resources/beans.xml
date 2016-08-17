@@ -73,12 +73,12 @@
 <!-- 		<constructor-arg value="#{ 95 + (T(java.lang.Math).random() * 10.0) }"/> -->
 <!-- 	</bean> -->
 	
-	<bean class="com.epam.botor.domain.Jedi" id="obiVanKenobi" autowire="byType" autowire-candidate="false">
-		<constructor-arg value="MALE" type="com.epam.botor.domain.Gender" />
-		<constructor-arg value="Obi Van Kenobi" type="java.lang.String" />
+<!-- 	<bean class="com.epam.botor.domain.Jedi" id="obiVanKenobi" autowire="byType" autowire-candidate="false"> -->
+<!-- 		<constructor-arg value="MALE" type="com.epam.botor.domain.Gender" /> -->
+<!-- 		<constructor-arg value="Obi Van Kenobi" type="java.lang.String" /> -->
 <!-- 		<property name="padavan" ref="anakin" /> -->
 <!-- 		<property name="lightSabre" ref="lightSabre" /> -->
-	</bean>
+<!-- 	</bean> -->
 
 	<bean class="com.epam.botor.domain.Jedi" id="anakin" primary="true">
 		<constructor-arg value="    Anakin Skywalker   " />
@@ -113,10 +113,10 @@
 	</bean>
 
 
-	<bean class="com.epam.botor.domain.LightSabre" factory-bean="obiVanKenobi"
-		factory-method="createUglyLightSabre" id="uglyLightSabre"  autowire-candidate="false">
-		<constructor-arg value="1000" />
-	</bean>
+<!-- 	<bean class="com.epam.botor.domain.LightSabre" factory-bean="obiVanKenobi" -->
+<!-- 		factory-method="createUglyLightSabre" id="uglyLightSabre"  autowire-candidate="false"> -->
+<!-- 		<constructor-arg value="1000" /> -->
+<!-- 	</bean> -->
 
 	<bean class="com.epam.botor.domain.LightSabre" id="freeMemoryLightSabre">
 		<constructor-arg value="Free memory light sabre" />
@@ -130,21 +130,21 @@
 	</bean>
 	
 	<!-- Army of light -->
-	<util:list id="lightFighters">
-		<ref bean="obiVanKenobi"/>
-		<ref bean="anakin"/>
-		<ref bean="trooper"/>
-		<ref bean="trooper"/>
-		<ref bean="trooper"/>
-		<ref bean="trooper"/>
-	</util:list>
+<!-- 	<util:list id="lightFighters"> -->
+<!-- 		<ref bean="obiVanKenobi"/> -->
+<!-- 		<ref bean="anakin"/> -->
+<!-- 		<ref bean="trooper"/> -->
+<!-- 		<ref bean="trooper"/> -->
+<!-- 		<ref bean="trooper"/> -->
+<!-- 		<ref bean="trooper"/> -->
+<!-- 	</util:list> -->
 	
 	
 	
-	<bean class="com.epam.botor.domain.Army" id="armyOfLight">
- 		<constructor-arg ref="joda"/> 
-		<constructor-arg ref="lightFighters"/>
-	</bean>
+<!-- 	<bean class="com.epam.botor.domain.Army" id="armyOfLight"> -->
+<!--  		<constructor-arg ref="joda"/>  -->
+<!-- 		<constructor-arg ref="lightFighters"/> -->
+<!-- 	</bean> -->
 	
 	<!-- Army of dark -->
 <!-- 	<bean class="com.epam.botor.domain.Trooper" name="trooper" scope="prototype" autowire-candidate="false"> -->
@@ -168,11 +168,11 @@
 		<property name="leader.lightSabre" value="Dark army leader sabre, 300"/>
 	</bean>
 	
-	<bean class="com.epam.botor.domain.Army">
-		<constructor-arg ref="obiVanKenobi" />
-		<constructor-arg
-			value="#{@lightFighters.?[#this.class.simpleName eq 'Jedi']}" />
-	</bean>
+<!-- 	<bean class="com.epam.botor.domain.Army"> -->
+<!-- 		<constructor-arg ref="obiVanKenobi" /> -->
+<!-- 		<constructor-arg -->
+<!-- 			value="#{@lightFighters.?[#this.class.simpleName eq 'Jedi']}" /> -->
+<!-- 	</bean> -->
 	
 	<!-- The Battle -->
 <!-- 	<bean class="com.epam.botor.domain.Battleground" id="dryBattleground"> -->
