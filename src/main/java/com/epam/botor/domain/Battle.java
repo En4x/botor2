@@ -1,16 +1,25 @@
 package com.epam.botor.domain;
 
+import java.util.Locale;
 import java.util.Map;
 
 import javax.annotation.Resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Component;
 
 @Component("starWarsBattle")
 public class Battle {
-	Logger LOGGER = LoggerFactory.getLogger(Battle.class);
+	private final static Logger LOGGER = LoggerFactory.getLogger(Battle.class);
+	
+	@Autowired
+	private MessageSource messageSource;
+	
+	@Autowired
+	private Locale locale;
 
 	@Resource(name = "dryBattleground")
     private Battleground battleground;
@@ -28,7 +37,7 @@ public class Battle {
     }
     
     public void battle() {
-    	//TODO: implement
+    	LOGGER.debug(messageSource.getMessage("battle.start.message", new Object[] { battleground.getName() }, locale));
     	LOGGER.debug(toString());
     }
 
