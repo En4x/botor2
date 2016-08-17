@@ -170,7 +170,7 @@
 	</bean>
 	
 	<!-- The Battle -->
-	<bean class="com.epam.botor.domain.Battleground">
+	<bean class="com.epam.botor.domain.Battleground" id="dryBattleground">
 		<constructor-arg value="dry battle ground"/>
 		<constructor-arg value="DRY"/>
 	</bean>

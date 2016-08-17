@@ -6,13 +6,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 
 public class Battle {
 	Logger LOGGER = LoggerFactory.getLogger(Battle.class);
 
-	
-	@Autowired
-	@Qualifier("defaultBattleGround")
+//	@Autowired
+//	@Qualifier("defaultBattleGround")
+	@Value("#{@dryBattleground}")
     private Battleground battleground;
 
 	@Autowired
