@@ -6,7 +6,9 @@ import javax.annotation.Resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
+@Component("starWarsBattle")
 public class Battle {
 	Logger LOGGER = LoggerFactory.getLogger(Battle.class);
 

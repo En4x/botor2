@@ -1,11 +1,15 @@
 package com.epam.botor.domain;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component("dryBattleground")
 public class Battleground {
 
     private final String name;
     private BattlegroundType type;
 
-    public Battleground(final String name, final BattlegroundType type) {
+    public Battleground(@Value("dry battle ground") final String name, @Value("DRY") final BattlegroundType type) {
         super();
         this.name = name;
         this.type = type;

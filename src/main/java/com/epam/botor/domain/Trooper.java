@@ -1,10 +1,15 @@
 package com.epam.botor.domain;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component("trooper")
+@Scope("prototype")
 public class Trooper extends Person {
 	private static int counter;
 	
-	
-	public Trooper(String name, Gender gender) {
+	public Trooper(@Value("${trooper.name.default}") String name, @Value("${trooper.gender.default}") Gender gender) {
 		super(name + "[" + counter + "]", gender);
 		counter++;
 	}

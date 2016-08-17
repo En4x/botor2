@@ -11,7 +11,8 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 
-	<context:annotation-config />
+	<context:component-scan base-package="com.epam.botor.domain" />
+	
 	<context:property-placeholder location="classpath:starwars.properties"/> 
 
 	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
@@ -142,10 +143,10 @@
 	</bean>
 	
 	<!-- Army of dark -->
-	<bean class="com.epam.botor.domain.Trooper" name="trooper" scope="prototype" autowire-candidate="false">
-		<constructor-arg value="no name trooper"/>
-		<constructor-arg value="MALE"/>
-	</bean>
+<!-- 	<bean class="com.epam.botor.domain.Trooper" name="trooper" scope="prototype" autowire-candidate="false"> -->
+<!-- 		<constructor-arg value="no name trooper"/> -->
+<!-- 		<constructor-arg value="MALE"/> -->
+<!-- 	</bean> -->
 	
 	<bean class="com.epam.botor.domain.Army" id="armyOfDark">
 		<constructor-arg ref="gezaGizner"/>
@@ -170,11 +171,11 @@
 	</bean>
 	
 	<!-- The Battle -->
-	<bean class="com.epam.botor.domain.Battleground" id="dryBattleground">
-		<constructor-arg value="dry battle ground"/>
-		<constructor-arg value="DRY"/>
-	</bean>
-	<bean class="com.epam.botor.domain.Battleground">
+<!-- 	<bean class="com.epam.botor.domain.Battleground" id="dryBattleground"> -->
+<!-- 		<constructor-arg value="dry battle ground"/> -->
+<!-- 		<constructor-arg value="DRY"/> -->
+<!-- 	</bean> -->
+	<bean class="com.epam.botor.domain.Battleground" id="wetBattleground">
 		<qualifier value="defaultBattleGround"/>
 		<constructor-arg value="wet battle ground"/>
 		<constructor-arg value="WET"/>
@@ -185,7 +186,7 @@
 		<entry key="armyOfDark" value-ref="armyOfDark"/>
 	</util:map>
 	
-	<bean class="com.epam.botor.domain.Battle"/>
+<!-- 	<bean class="com.epam.botor.domain.Battle"/> -->
 					
 	<!--  Factory bean -->
 	<bean id="commonBlaster" class="com.epam.botor.domain.BlasterFactoryBean" c:name="blaster" c:damage="100"/>

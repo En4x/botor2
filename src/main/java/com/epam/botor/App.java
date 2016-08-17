@@ -22,8 +22,8 @@ public class App {
 		
 		try (ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("beans.xml")) {
 			
-			Battle battle = context.getBean(Battle.class);
-			
+			Battle battle = context.getBean("starWarsBattle", Battle.class);
+			LOGGER.debug(context.getBean("wetBattleground").toString());
 			battle.battle();
 			
 			
