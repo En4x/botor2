@@ -8,10 +8,13 @@ import java.util.Set;
 
 import org.springframework.beans.factory.config.CustomEditorConfigurer;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ConversionServiceFactoryBean;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.convert.converter.Converter;
 
 import com.epam.botor.beanpostprocessors.SayRiseBeanPostProcessor;
@@ -21,6 +24,8 @@ import com.epam.botor.propertyeditors.MyStringTrimmerEditor;
 @Configuration
 @ImportResource("classpath:beans.xml")
 @Import({ JediConfig.class, LightSabreConfiguration.class })
+@PropertySource("classpath:starwars.properties")
+@ComponentScan(basePackages = "com.epam.botor.domain")
 public class StarWarsConfig {
 
 	@Bean
@@ -51,5 +56,13 @@ public class StarWarsConfig {
 	public SayRiseBeanPostProcessor sayRiseBeanPostProcessor() {
 		return new SayRiseBeanPostProcessor();
 	}
+	
+	@Bean
+	public static PropertySourcesPlaceholderConfigurer config() {
+		PropertySourcesPlaceholderConfigurer result = new PropertySourcesPlaceholderConfigurer();
+		result.setFileEncoding("UTF-8");
+		return result;
+	}
+
 	
 }
