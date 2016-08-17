@@ -48,10 +48,14 @@
 		<constructor-arg value="${lightsabre.red.damage}" type="int"/>
 	</bean>
 
+	<bean class="com.epam.botor.domain.LightSabre" id="yellowSabre"
+		scope="prototype"
+		c:name="yellow sabre" c:damage="${lightsabre.yellow.damage}" p:color="YELLOW"/>
+
 	<bean class="com.epam.botor.domain.LightSabre" id="blueSabre"
 		scope="prototype"
 		c:name="blue sabre" c:damage="${lightsabre.blue.damage}" p:color="BLUE"/>
-
+		
 	<bean class="com.epam.botor.domain.Jedi" id="joda"  autowire-candidate="false">
 		<constructor-arg value="MALE" index="1" />
 		<constructor-arg ref="jodaName" index="0" />
