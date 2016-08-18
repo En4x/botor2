@@ -34,6 +34,9 @@ public class LightSabre extends Weapon {
 	}
 
 	public String shoot() {
+		if (Math.random() > 0.5) {
+			throw new BlowUpException();
+		}
 		return getName() + ": " + getDamage() + " * Tyutyutyu";
 	}
 

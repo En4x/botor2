@@ -47,7 +47,12 @@ public class Battle {
     		LOGGER.debug("Battle with " + armyName);
     		LOGGER.debug("Leader: " + army.getLeader().getName());
     		for (Person person : army.getFighters()) {
-    			LOGGER.debug(person.getName() + ": " + person.fight());
+    			try {    				
+    				LOGGER.debug(person.getName() + ": " + person.fight());
+    			}
+    			catch (IDoNotWantToFightException | BlowUpException ex) {
+    				LOGGER.debug("Exception thrown: " + ex.getClass().getSimpleName());
+    			}
     		}
     	}
     	LOGGER.debug("BATTLE ENDED");

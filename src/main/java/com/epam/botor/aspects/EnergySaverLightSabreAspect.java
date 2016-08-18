@@ -1,7 +1,7 @@
 package com.epam.botor.aspects;
 
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -22,24 +22,24 @@ public class EnergySaverLightSabreAspect {
 
         LightSabre targetLightSabre = (LightSabre) joinPoint.getTarget();
 
+        LOGGER.warn("Switching on " + targetLightSabre.getName());
+
         targetLightSabre.setSwitchedOn(true);
 
     }
 
-    @AfterReturning(
-            pointcut = "lightSabreInUse()",
-            returning = "returnValue")
-    public void switchOffAfter(final JoinPoint joinPoint, final String returnValue) {
+    @After("lightSabreInUse()")
+    public void switchOffAfter(final JoinPoint joinPoint) {
 
         LightSabre targetLightSabre = (LightSabre) joinPoint.getTarget();
 
-        LOGGER.warn("Returned value: " + returnValue);
+        LOGGER.warn("Switching off " + targetLightSabre.getName());
 
         targetLightSabre.setSwitchedOn(false);
 
     }
 
-    @Pointcut("execution (* com.epam.botor.domain.LightSabre.shoot())")
+    @Pointcut("execution (String com.epam.botor.domain.LightSabre.shoot())")
     private void lightSabreInUse() {
 
     }
