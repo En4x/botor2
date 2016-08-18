@@ -33,7 +33,7 @@ public class Jedi extends Person implements ForceUser {
     }
 
 	public String fight() {
-		return lightSabre == null ? "no sabre" : lightSabre.hit();
+		return lightSabre == null ? "no sabre" : lightSabre.shoot();
 	}
 
 	public static Jedi createJediMaster(String name, Jedi padavan) {

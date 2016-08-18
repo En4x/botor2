@@ -13,6 +13,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
@@ -31,7 +32,8 @@ import com.epam.botor.propertyeditors.MyStringTrimmerEditor;
 @ImportResource("classpath:beans.xml")
 @Import({ JediConfig.class, LightSabreConfiguration.class /*, ArmyConfig.class */})
 @PropertySource("classpath:starwars.properties")
-@ComponentScan(basePackages = "com.epam.botor.domain")
+@ComponentScan(basePackages = { "com.epam.botor.domain", "com.epam.botor.aspects" })
+@EnableAspectJAutoProxy
 public class StarWarsConfig {
 
 	@Bean

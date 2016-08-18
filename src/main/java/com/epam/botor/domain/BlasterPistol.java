@@ -12,5 +12,10 @@ public class BlasterPistol extends Weapon implements Blaster {
 		return "BlasterPistol [getName()=" + getName() + ", getDamage()=" + getDamage() + "]";
 	}
 
+	@Override
+	public String shoot() {
+		return "tyu tyu tu";
+	}
+
     
 }

@@ -18,7 +18,6 @@
 <!-- 	<context:property-placeholder location="classpath:starwars.properties"/>  -->
 
 	
-	
 <!-- 	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer"> -->
 <!-- 		<property name="customEditors"> -->
 <!-- 			<map> -->

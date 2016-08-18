@@ -7,4 +7,9 @@ public class BlasterRifle extends Weapon implements Blaster {
         // TODO Auto-generated constructor stub
     }
 
+	@Override
+	public String shoot() {
+		return "tyu tyu tu";
+	}
+
 }

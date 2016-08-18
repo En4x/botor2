@@ -19,6 +19,8 @@ public abstract class Weapon {
         return damage;
     }
 
+    public abstract String shoot();
+    
 	@Override
 	public String toString() {
 		return "Weapon [name=" + name + ", damage=" + damage + "]";

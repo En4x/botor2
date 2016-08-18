@@ -1,12 +1,7 @@
 package com.epam.botor.domain;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
 
 public class LightSabre extends Weapon implements EnergyWeapon {
 
@@ -35,7 +30,7 @@ public class LightSabre extends Weapon implements EnergyWeapon {
 		return System.identityHashCode(this);
 	}
 
-	public String hit() {
+	public String shoot() {
 		return getName() + ": " + getDamage() + " * Tyutyutyu";
 	}
 
