@@ -43,6 +43,13 @@ public class App {
 			LOGGER.debug("" + forceUser.getAlliance());
 			LOGGER.debug("" + ((Trooper)forceUser).getName());
 			
+			LOGGER.debug(context.getBean("randomIonBlaster").getClass().getName());
+			LOGGER.debug(context.getBean("randomIonBlaster").getClass().getName());
+			LOGGER.debug(context.getBean("randomIonBlaster").getClass().getName());
+			LOGGER.debug(context.getBean("randomIonBlaster").getClass().getName());
+			LOGGER.debug(context.getBean("randomIonBlaster").getClass().getName());
+			LOGGER.debug(context.getBean("randomIonBlaster").getClass().getName());
+			
 			
 			
 			

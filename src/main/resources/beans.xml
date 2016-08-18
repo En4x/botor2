@@ -208,6 +208,19 @@
     	<entry key-ref="trooper" value="First"/>
     	<entry key-ref="trooper" value="Second"/>
     </util:map>
+    
+<!--     <bean id="randomIonBlaster" class="com.epam.botor.domain.IonBlaster" factory-bean="ionBlasterFactory" factory-method="produceIonBlaster" scope="prototype"/> -->
+		
+<!-- 	<bean id="ionBlasterFactory" class="com.epam.botor.domain.RandomIonBlasterSimpleFactory"> -->
+<!-- 	 <lookup-method name="getIonBlasterPistol" bean="ionBlasterPistolRepo"/> -->
+<!-- 	 <lookup-method name="getIonBlasterRifle" bean="ionBlasterRifleRepo"/> -->
+<!-- 	 <lookup-method name="getIonBlasterCannon" bean="ionBlasterCannonRepo"/> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="ionBlasterPistolRepo" class="com.epam.botor.domain.IonBlasterPistol" c:ionDamage="10" scope="prototype"/> -->
+<!-- 	<bean id="ionBlasterRifleRepo" class="com.epam.botor.domain.IonBlasterRifle" c:ionDamage="30" scope="prototype"/> -->
+<!-- 	<bean id="ionBlasterCannonRepo" class="com.epam.botor.domain.IonBlasterCannon" c:ionDamage="200" scope="prototype"/> -->
+	
 </beans>
 
 

@@ -9,6 +9,7 @@ import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.CustomEditorConfigurer;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -17,6 +18,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.Scope;
 import org.springframework.context.support.ConversionServiceFactoryBean;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.context.support.ResourceBundleMessageSource;
@@ -26,6 +28,11 @@ import com.epam.botor.beanpostprocessors.SayRiseBeanPostProcessor;
 import com.epam.botor.converters.LightSabreConverter;
 import com.epam.botor.domain.Fight;
 import com.epam.botor.domain.FightEventHandler;
+import com.epam.botor.domain.IonBlaster;
+import com.epam.botor.domain.IonBlasterCannon;
+import com.epam.botor.domain.IonBlasterPistol;
+import com.epam.botor.domain.IonBlasterRifle;
+import com.epam.botor.domain.RandomIonBlasterSimpleFactory;
 import com.epam.botor.propertyeditors.MyStringTrimmerEditor;
 
 @Configuration
@@ -89,5 +96,61 @@ public class StarWarsConfig {
 	public FightEventHandler fightEventHandler() {
 		return new FightEventHandler();
 	}
+	
+//    <bean id="randomIonBlaster" class="com.epam.botor.domain.IonBlaster" factory-bean="ionBlasterFactory" factory-method="produceIonBlaster" scope="prototype"/>
+//	
+//	<bean id="ionBlasterFactory" class="com.epam.botor.domain.RandomIonBlasterSimpleFactory">
+//	 <lookup-method name="getIonBlasterPistol" bean="ionBlasterPistolRepo"/>
+//	 <lookup-method name="getIonBlasterRifle" bean="ionBlasterRifleRepo"/>
+//	 <lookup-method name="getIonBlasterCannon" bean="ionBlasterCannonRepo"/>
+//	</bean>
+//	
+	@Bean
+	public RandomIonBlasterSimpleFactory ionBlasterFactory(ApplicationContext context) {
+		return new RandomIonBlasterSimpleFactory() {
+			
+			@Override
+			public IonBlasterRifle getIonBlasterRifle() {
+				return context.getBean("ionBlasterRifleRepo", IonBlasterRifle.class);
+			}
+			
+			@Override
+			public IonBlasterPistol getIonBlasterPistol() {
+				return context.getBean("ionBlasterPistolRepo", IonBlasterPistol.class);
+			}
+			
+			@Override
+			public IonBlasterCannon getIonBlasterCannon() {
+				return context.getBean("ionBlasterCannonRepo", IonBlasterCannon.class);			}
+		};
+	}
+	
+	@Bean
+	@Scope("prototype")
+	public IonBlaster randomIonBlaster(RandomIonBlasterSimpleFactory ionBlasterFactory ) {
+		return ionBlasterFactory.produceIonBlaster();
+	}
+	
+	
+	@Bean
+	@Scope("prototype")
+	public IonBlaster ionBlasterPistolRepo() {
+		return new IonBlasterPistol(10);
+	}
+	
+	@Bean
+	@Scope("prototype")
+	public IonBlaster ionBlasterRifleRepo() {
+		return new IonBlasterRifle(10);
+	}
+
+	@Bean
+	@Scope("prototype")
+	public IonBlaster ionBlasterCannonRepo() {
+		return new IonBlasterCannon(10);
+	}
+
+	
+	
 }
 
