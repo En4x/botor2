@@ -6,8 +6,6 @@ import java.beans.ConstructorProperties;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Required;
 
 public class Jedi extends Person implements ForceUser {
@@ -16,7 +14,7 @@ public class Jedi extends Person implements ForceUser {
 	
 	public static final String THE_NAME_OF_THE_DARK_LEADER = "Geza Gizner";
 	
-	private LightSabre lightSabre;
+	private EnergyWeapon lightSabre;
 	
 	private Jedi padavan; 
 	
@@ -57,12 +55,12 @@ public class Jedi extends Person implements ForceUser {
 	}
 
 	@Required
-	public void setLightSabre(LightSabre lightSabre) {
+	public void setLightSabre(EnergyWeapon lightSabre) {
 		this.lightSabre = lightSabre;
 	}
 
 	
-	public LightSabre getLightSabre() {
+	public EnergyWeapon getLightSabre() {
 		return lightSabre;
 	}
 

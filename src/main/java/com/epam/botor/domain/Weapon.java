@@ -1,6 +1,6 @@
 package com.epam.botor.domain;
 
-public abstract class Weapon {
+public abstract class Weapon implements EnergyWeapon {
 
     private final String name;
     private final int damage;

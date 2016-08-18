@@ -3,7 +3,7 @@ package com.epam.botor.domain;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class LightSabre extends Weapon implements EnergyWeapon {
+public class LightSabre extends Weapon {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(Jedi.class);
 	

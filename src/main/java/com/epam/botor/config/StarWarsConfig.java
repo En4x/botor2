@@ -23,6 +23,7 @@ import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.core.convert.converter.Converter;
 
 import com.epam.botor.beanpostprocessors.SayRiseBeanPostProcessor;
+import com.epam.botor.converters.EnergyWeaponConverter;
 import com.epam.botor.converters.LightSabreConverter;
 import com.epam.botor.domain.Fight;
 import com.epam.botor.domain.FightEventHandler;
@@ -51,7 +52,7 @@ public class StarWarsConfig {
 		ConversionServiceFactoryBean conversionService = new ConversionServiceFactoryBean();
 		Set<Converter<?, ?>> converters = new HashSet<>();
 		converters.add(new LightSabreConverter());
-
+		converters.add(new EnergyWeaponConverter());
 		conversionService.setConverters(converters);
 		return conversionService;
 	}
@@ -91,3 +92,4 @@ public class StarWarsConfig {
 		return new FightEventHandler();
 	}
 }
+

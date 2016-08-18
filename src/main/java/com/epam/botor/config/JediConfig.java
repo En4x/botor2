@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.epam.botor.domain.Army;
+import com.epam.botor.domain.EnergyWeapon;
 import com.epam.botor.domain.Jedi;
 import com.epam.botor.domain.LightSabre;
 import com.epam.botor.domain.Person;
@@ -24,7 +25,7 @@ public class JediConfig {
 	ApplicationContext ctx;
 
 	@Bean
-	public Jedi darthVader(@Qualifier("lightSabre") LightSabre lightSabre) {
+	public Jedi darthVader(@Qualifier("lightSabre") EnergyWeapon lightSabre) {
 		Jedi darthVader = new Jedi("Darth Vader", MALE);
 		darthVader.setLightSabre(lightSabre);
 		return darthVader;

@@ -13,12 +13,16 @@ public class ShootLoggerAspect {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ShootLoggerAspect.class);
 
-    @Before("execution (* com.epam.botor.domain.LightSabre.shoot(..))")
+    @Before("execution (* com.epam.botor.domain.Weapon.shoot(..))")
     public void logShooting(final JoinPoint joinPoint) {
 
         String targetObjectClassName = joinPoint.getTarget().getClass().getSimpleName();
+        
+        String proxyObjectClassName = joinPoint.getThis().getClass().getName();
+        		
 
         LOGGER.debug(targetObjectClassName + " is shooting!");
+        LOGGER.debug("Proxy object class name: "  + proxyObjectClassName);
 
     }
 
