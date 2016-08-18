@@ -9,6 +9,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.epam.botor.config.StarWarsConfig;
 import com.epam.botor.domain.Battle;
+import com.epam.botor.domain.DarkSideOfTheForce;
 import com.epam.botor.domain.Fight;
 import com.epam.botor.domain.ForceSide;
 import com.epam.botor.domain.ForceUser;
@@ -24,33 +25,16 @@ public class App {
 	
 	public static void main(String[] args) {
 		
+		
 		try (ConfigurableApplicationContext context = 
 				new AnnotationConfigApplicationContext(StarWarsConfig.class)) {
 			
-			Battle battle = context.getBean("starWarsBattle", Battle.class);
 			
-			Map<String, LightSabre> lightSabres = context.getBeansOfType(LightSabre.class);
+			Battle battle = context.getBean("starWarsBattle", Battle.class);			
 			battle.battle();
-			for (String lightSabreName : lightSabres.keySet()) {
-				LOGGER.debug(
-						"{}.switchedOn = {}", lightSabreName, 
-							context.getBean(lightSabreName, LightSabre.class).isSwitchedOn());
-			}
 			
-			ForceUser forceUser = context.getBean("trooper", ForceUser.class);
-			LOGGER.debug("" + forceUser.getAlliance());
-			forceUser.toString();
-			LOGGER.debug("" + forceUser.getAlliance());
-			LOGGER.debug("" + ((Trooper)forceUser).getName());
-			
-			LOGGER.debug(context.getBean("randomIonBlaster").getClass().getName());
-			LOGGER.debug(context.getBean("randomIonBlaster").getClass().getName());
-			LOGGER.debug(context.getBean("randomIonBlaster").getClass().getName());
-			LOGGER.debug(context.getBean("randomIonBlaster").getClass().getName());
-			LOGGER.debug(context.getBean("randomIonBlaster").getClass().getName());
-			LOGGER.debug(context.getBean("randomIonBlaster").getClass().getName());
-			
-			
+			DarkSideOfTheForce darkSideOfTheForce = new DarkSideOfTheForce();
+			LOGGER.debug(darkSideOfTheForce.drawFrom());
 			
 			
 		}

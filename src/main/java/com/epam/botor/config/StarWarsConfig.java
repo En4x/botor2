@@ -15,10 +15,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.EnableLoadTimeWeaving;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.aspectj.EnableSpringConfigured;
 import org.springframework.context.support.ConversionServiceFactoryBean;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.context.support.ResourceBundleMessageSource;
@@ -28,6 +30,7 @@ import com.epam.botor.beanpostprocessors.SayRiseBeanPostProcessor;
 import com.epam.botor.converters.LightSabreConverter;
 import com.epam.botor.domain.Fight;
 import com.epam.botor.domain.FightEventHandler;
+import com.epam.botor.domain.ForceSide;
 import com.epam.botor.domain.IonBlaster;
 import com.epam.botor.domain.IonBlasterCannon;
 import com.epam.botor.domain.IonBlasterPistol;
@@ -41,6 +44,8 @@ import com.epam.botor.propertyeditors.MyStringTrimmerEditor;
 @PropertySource("classpath:starwars.properties")
 @ComponentScan(basePackages = { "com.epam.botor.domain", "com.epam.botor.aspects" })
 @EnableAspectJAutoProxy(proxyTargetClass = true)
+@EnableSpringConfigured
+@EnableLoadTimeWeaving
 public class StarWarsConfig {
 
 	@Bean
@@ -150,7 +155,10 @@ public class StarWarsConfig {
 		return new IonBlasterCannon(10);
 	}
 
-	
+	@Bean
+	public ForceSide theDarkSide() {
+		return ForceSide.DARK;
+	}
 	
 }
 
