@@ -37,8 +37,6 @@ public class Battle {
     }
     
     public void battle() {
-    	long start = System.currentTimeMillis();
-    	LOGGER.debug("BATTLE STARTED");
     	
     	LOGGER.debug(messageSource.getMessage("battle.start.message", new Object[] { battleground.getName() }, locale));
     	
@@ -55,8 +53,6 @@ public class Battle {
     			}
     		}
     	}
-    	LOGGER.debug("BATTLE ENDED");
-    	LOGGER.debug("BATTLE LENGTH = " + (System.currentTimeMillis() - start));
     	
     }
 
