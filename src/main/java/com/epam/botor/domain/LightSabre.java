@@ -8,7 +8,7 @@ public class LightSabre extends Weapon {
 	private static final Logger LOGGER = LoggerFactory.getLogger(Jedi.class);
 	
 	private Color color;
-	
+	private boolean switchedOn;
 	
     public LightSabre(final String name, final int damage) {
         super(name, damage);
@@ -79,4 +79,13 @@ public class LightSabre extends Weapon {
 		this.color = color;
 	}
 
+	public boolean isSwitchedOn() {
+		return switchedOn;
+	}
+
+	public void setSwitchedOn(boolean switchedOn) {
+		this.switchedOn = switchedOn;
+	}
+
+	
 }
