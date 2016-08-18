@@ -44,7 +44,7 @@ public abstract class Person {
 
 	public abstract String fight();
 	
-	public abstract String battleCry();
+	public abstract String battleCry(LoudNess loudNess);
 	
 	@Override
 	public boolean equals(Object obj) {

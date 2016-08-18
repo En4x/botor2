@@ -74,7 +74,7 @@ public class Jedi extends Person implements ForceUser {
 	}
 
 	@Override
-	public String battleCry() {
+	public String battleCry(LoudNess loudNess) {
 		return "I'm a jedi, and now I'll fight!";
 	}
 	

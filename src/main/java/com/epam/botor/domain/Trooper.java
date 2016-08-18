@@ -28,7 +28,7 @@ public class Trooper extends Person {
 	}
 
 	@Override
-	public String battleCry() {
+	public String battleCry(LoudNess loudNess) {
 		return "I was born to die for my leader.";
 	}
 	
