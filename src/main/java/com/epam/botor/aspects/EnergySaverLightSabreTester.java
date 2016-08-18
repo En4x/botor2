@@ -17,16 +17,16 @@ public class EnergySaverLightSabreTester {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(EnergySaverLightSabreTester.class);
 
-    @Before("com.epam.botor.aspects.EnergySaverLightSabreAspect.lightSabreInUse()")
-    @Order(200)
-    public void testSwitchedOnBefore(final JoinPoint joinPoint) {
-
-        LightSabre targetLightSabre = (LightSabre) joinPoint.getTarget();
-        LOGGER.warn(joinPoint.getTarget().getClass().getName());
-        LOGGER.warn(joinPoint.getThis().getClass().getName());
-        LOGGER.warn("Switched on before use: " + targetLightSabre.isSwitchedOn());
-
-    }
+//    @Before("com.epam.botor.aspects.EnergySaverLightSabreAspect.lightSabreInUse()")
+//    @Order(200)
+//    public void testSwitchedOnBefore(final JoinPoint joinPoint) {
+//
+//        LightSabre targetLightSabre = (LightSabre) joinPoint.getTarget();
+//        LOGGER.warn(joinPoint.getTarget().getClass().getName());
+//        LOGGER.warn(joinPoint.getThis().getClass().getName());
+//        LOGGER.warn("Switched on before use: " + targetLightSabre.isSwitchedOn());
+//
+//    }
 
     @After("com.epam.botor.aspects.EnergySaverLightSabreAspect.lightSabreInUse()")
     @Order(200)

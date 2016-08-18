@@ -6,5 +6,10 @@ public class Sith implements ForceUser {
     public ForceSide getAlliance() {
         return ForceSide.DARK;
     }
+    
+	@Override
+	public void setAlliance(ForceSide alliance) {
+		throw new UnsupportedOperationException();		
+	}
 
 }

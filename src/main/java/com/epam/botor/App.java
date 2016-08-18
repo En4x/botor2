@@ -10,7 +10,10 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.epam.botor.config.StarWarsConfig;
 import com.epam.botor.domain.Battle;
 import com.epam.botor.domain.Fight;
+import com.epam.botor.domain.ForceSide;
+import com.epam.botor.domain.ForceUser;
 import com.epam.botor.domain.LightSabre;
+import com.epam.botor.domain.Trooper;
 
 /**
  * Jedi Application
@@ -33,6 +36,13 @@ public class App {
 						"{}.switchedOn = {}", lightSabreName, 
 							context.getBean(lightSabreName, LightSabre.class).isSwitchedOn());
 			}
+			
+			ForceUser forceUser = context.getBean("trooper", ForceUser.class);
+			LOGGER.debug("" + forceUser.getAlliance());
+			forceUser.toString();
+			LOGGER.debug("" + forceUser.getAlliance());
+			LOGGER.debug("" + ((Trooper)forceUser).getName());
+			
 			
 			
 			

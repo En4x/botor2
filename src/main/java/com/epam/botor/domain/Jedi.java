@@ -30,6 +30,7 @@ public class Jedi extends Person implements ForceUser {
         return ForceSide.LIGHT;
     }
 
+	
 	public String fight() {
 		return lightSabre == null ? "no sabre" : lightSabre.shoot();
 	}
@@ -76,6 +77,11 @@ public class Jedi extends Person implements ForceUser {
 	@Override
 	public String battleCry(LoudNess loudNess) {
 		return "I'm a jedi, and now I'll fight!";
+	}
+
+	@Override
+	public void setAlliance(ForceSide alliance) {
+		throw new UnsupportedOperationException();		
 	}
 	
 	

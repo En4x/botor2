@@ -4,4 +4,6 @@ public interface ForceUser {
 
     ForceSide getAlliance();
 
+	void setAlliance(ForceSide alliance);
+
 }
