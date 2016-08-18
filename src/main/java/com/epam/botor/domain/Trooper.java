@@ -20,7 +20,10 @@ public class Trooper extends Person {
 	}
 
 	@Override
-	public String fight() {		
+	public String fight() {
+		if (Math.random() > 0.8) {
+			throw new IDoNotWantToFightException();
+		}
 		return "I'll die placccs placss";
 	}
 

@@ -39,7 +39,7 @@ public class EnergySaverLightSabreAspect {
 
     }
 
-    @Pointcut("execution (String com.epam.botor.domain.LightSabre.shoot())")
+    @Pointcut("execution (* com.epam.botor.domain.LightSabre.shoot())")
     private void lightSabreInUse() {
 
     }

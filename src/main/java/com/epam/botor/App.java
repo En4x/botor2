@@ -22,7 +22,7 @@ public class App {
 	public static void main(String[] args) {
 		
 		try (ConfigurableApplicationContext context = 
-				new AnnotationConfigApplicationContext(StarWarsConfig.class);) {
+				new AnnotationConfigApplicationContext(StarWarsConfig.class)) {
 			
 			Battle battle = context.getBean("starWarsBattle", Battle.class);
 			
@@ -30,7 +30,8 @@ public class App {
 			battle.battle();
 			for (String lightSabreName : lightSabres.keySet()) {
 				LOGGER.debug(
-						"{}.switchedOn = {}", lightSabreName, context.getBean(lightSabreName, LightSabre.class).isSwitchedOn());
+						"{}.switchedOn = {}", lightSabreName, 
+							context.getBean(lightSabreName, LightSabre.class).isSwitchedOn());
 			}
 			
 			

@@ -62,6 +62,10 @@ public abstract class Person {
 			return false;
 		return true;
 	}
+
+	public int getDogTagID() {
+		return System.identityHashCode(this);
+	}
     
     
 
