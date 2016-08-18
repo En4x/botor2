@@ -23,7 +23,6 @@ import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.core.convert.converter.Converter;
 
 import com.epam.botor.beanpostprocessors.SayRiseBeanPostProcessor;
-import com.epam.botor.converters.EnergyWeaponConverter;
 import com.epam.botor.converters.LightSabreConverter;
 import com.epam.botor.domain.Fight;
 import com.epam.botor.domain.FightEventHandler;
@@ -34,7 +33,7 @@ import com.epam.botor.propertyeditors.MyStringTrimmerEditor;
 @Import({ JediConfig.class, LightSabreConfiguration.class /*, ArmyConfig.class */})
 @PropertySource("classpath:starwars.properties")
 @ComponentScan(basePackages = { "com.epam.botor.domain", "com.epam.botor.aspects" })
-@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy(proxyTargetClass = true)
 public class StarWarsConfig {
 
 	@Bean
@@ -52,7 +51,6 @@ public class StarWarsConfig {
 		ConversionServiceFactoryBean conversionService = new ConversionServiceFactoryBean();
 		Set<Converter<?, ?>> converters = new HashSet<>();
 		converters.add(new LightSabreConverter());
-		converters.add(new EnergyWeaponConverter());
 		conversionService.setConverters(converters);
 		return conversionService;
 	}

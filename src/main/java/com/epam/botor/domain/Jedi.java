@@ -14,7 +14,7 @@ public class Jedi extends Person implements ForceUser {
 	
 	public static final String THE_NAME_OF_THE_DARK_LEADER = "Geza Gizner";
 	
-	private EnergyWeapon lightSabre;
+	private LightSabre lightSabre;
 	
 	private Jedi padavan; 
 	
@@ -55,12 +55,12 @@ public class Jedi extends Person implements ForceUser {
 	}
 
 	@Required
-	public void setLightSabre(EnergyWeapon lightSabre) {
+	public void setLightSabre(LightSabre lightSabre) {
 		this.lightSabre = lightSabre;
 	}
 
 	
-	public EnergyWeapon getLightSabre() {
+	public LightSabre getLightSabre() {
 		return lightSabre;
 	}
 

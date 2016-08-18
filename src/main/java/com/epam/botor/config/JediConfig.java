@@ -25,12 +25,11 @@ public class JediConfig {
 	ApplicationContext ctx;
 
 	@Bean
-	public Jedi darthVader(@Qualifier("lightSabre") EnergyWeapon lightSabre) {
+	public Jedi darthVader(@Qualifier("lightSabre") LightSabre lightSabre) {
 		Jedi darthVader = new Jedi("Darth Vader", MALE);
 		darthVader.setLightSabre(lightSabre);
 		return darthVader;
 	}
-
 
 	@Bean
 	public Jedi obiVanKenobi() {
