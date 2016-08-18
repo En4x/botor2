@@ -34,6 +34,7 @@ public class Jedi extends Person implements ForceUser {
 		return lightSabre == null ? "no sabre" : lightSabre.shoot();
 	}
 
+	
 	public static Jedi createJediMaster(String name, Jedi padavan) {
 		Jedi jedi = new Jedi(name, MALE);
 		jedi.padavan = padavan;
@@ -70,6 +71,11 @@ public class Jedi extends Person implements ForceUser {
 	
 	public Jedi getPadavan() {
 		return padavan;
+	}
+
+	@Override
+	public String battleCry() {
+		return "I'm a jedi, and now I'll fight!";
 	}
 	
 	
