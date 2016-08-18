@@ -13,16 +13,19 @@ public class LightSabre extends Weapon {
     public LightSabre(final String name, final int damage) {
         super(name, damage);
         this.color = null;
+        LOGGER.debug(name + " created" );
     }
 
     public LightSabre(final String name, final String unused) {
         super(name, -1);
         this.color = null;
+        LOGGER.debug(name + " created" );
     }
 
     public LightSabre(final String name, final Runtime runtime) {
         super(name, (int)runtime.freeMemory());
         this.color = null;
+        LOGGER.debug(name + " created" );
     }
     
     
