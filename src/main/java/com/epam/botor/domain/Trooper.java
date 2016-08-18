@@ -19,6 +19,11 @@ public class Trooper extends Person {
 		return "Trooper [getName()=" + getName() + "]";
 	}
 
+	@Override
+	public String fight() {		
+		return "I'll die placccs placss";
+	}
+
 	
 	
 	

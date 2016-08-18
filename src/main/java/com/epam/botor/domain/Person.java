@@ -42,6 +42,8 @@ public abstract class Person {
 		return result;
 	}
 
+	public abstract String fight();
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

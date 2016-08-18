@@ -15,7 +15,8 @@ import com.epam.botor.domain.LightSabre;
 @Configuration
 public class LightSabreConfiguration {
 
-	@Bean(initMethod="init", destroyMethod="destroy2")
+	//@Bean(initMethod="init", destroyMethod="destroy2")
+	@Bean
 	@Primary
 	@Scope("prototype")
 	public LightSabre lightSabre() {
@@ -23,7 +24,8 @@ public class LightSabreConfiguration {
 		return lightSabre;
 	}
 	
-	@Bean(initMethod="init", destroyMethod="destroy2")
+	//@Bean(initMethod="init", destroyMethod="destroy2")
+	@Bean
 	@Scope("prototype")
 	public LightSabre redSabre(@Value("${lightsabre.red.damage}") int damage) {
 		LightSabre lightSabre = new LightSabre("red sabre", damage);

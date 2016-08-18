@@ -29,7 +29,7 @@ import com.epam.botor.propertyeditors.MyStringTrimmerEditor;
 
 @Configuration
 @ImportResource("classpath:beans.xml")
-@Import({ JediConfig.class, LightSabreConfiguration.class, ArmyConfig.class })
+@Import({ JediConfig.class, LightSabreConfiguration.class /*, ArmyConfig.class */})
 @PropertySource("classpath:starwars.properties")
 @ComponentScan(basePackages = "com.epam.botor.domain")
 public class StarWarsConfig {
@@ -47,16 +47,13 @@ public class StarWarsConfig {
 	@Bean
 	public ConversionServiceFactoryBean conversionService() {
 		ConversionServiceFactoryBean conversionService = new ConversionServiceFactoryBean();
-		conversionService.setConverters(converters());
+		Set<Converter<?, ?>> converters = new HashSet<>();
+		converters.add(new LightSabreConverter());
+
+		conversionService.setConverters(converters);
 		return conversionService;
 	}
 	
-	@Bean
-	public Set<Converter<?, ?>> converters() {
-		Set<Converter<?, ?>> converters = new HashSet<>();
-		converters.add(new LightSabreConverter());
-		return converters;
-	}
 	
 	@Bean
 	public SayRiseBeanPostProcessor sayRiseBeanPostProcessor() {

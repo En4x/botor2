@@ -38,7 +38,16 @@ public class Battle {
     
     public void battle() {
     	LOGGER.debug(messageSource.getMessage("battle.start.message", new Object[] { battleground.getName() }, locale));
-    	LOGGER.debug(toString());
+    	
+    	for (String armyName : armies.keySet()) {
+    		Army army = armies.get(armyName);
+    		LOGGER.debug("Battle with " + armyName);
+    		LOGGER.debug("Leader: " + army.getLeader().getName());
+    		for (Person person : army.getFighters()) {
+    			LOGGER.debug(person.getName() + ": " + person.fight());
+    		}
+    	}
+    	
     }
 
 	@Override
